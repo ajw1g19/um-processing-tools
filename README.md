@@ -26,6 +26,8 @@ This directory contains three related workflows:
 - sbatch_scripts/: sbatch scripts for all workflows.
 - logs/: log files for all workflows.
 
+Use tidy_run.sh to clean subdirectories inside run/
+
 ## How STASH Version Resolution Works
 
 STASH requests are resolved in two steps:
