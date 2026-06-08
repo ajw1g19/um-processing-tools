@@ -1,4 +1,4 @@
-# STASH Extract
+# STASH Processing
 
 Programs for extraction and processing of Unified Model output
 
