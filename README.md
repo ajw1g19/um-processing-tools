@@ -32,7 +32,7 @@ This directory contains five workflows:
 - sbatch_scripts/: sbatch scripts for all workflows.
 - logs/: log files for all workflows.
 
-Use tidy_files.sh to clean subdirectories inside run/
+Use tidy_run_files.sh to clean subdirectories inside run/
 
 ## Workflow: submit_pp_checks.py
 
@@ -41,7 +41,7 @@ then updates suite state when jobs are submitted.
 
 Run:
 
-python STASH_extract/submit_pp_checks.py
+python STASH_Processing/submit_pp_checks.py
 
 Inputs:
 
@@ -50,18 +50,18 @@ Inputs:
 Generated files:
 
 - Sbatch scripts (one per suite with new files):
-  - STASH_extract/run/sbatch_scripts/{suite}\_pp_check.sbatch
+  - STASH_Processing/run/sbatch_scripts/{suite}\_pp_check.sbatch
 - Log files:
-  - STASH_extract/run/logs/{suite}\_pp_check.{slurm_job_id}.out
+  - STASH_Processing/run/logs/{suite}\_pp_check.{slurm_job_id}.out
 
 Updated files:
 
 - State file:
-  - STASH_extract/config/pp_check_state.json
+  - STASH_Processing/config/pp_check_state.json
 
 Worker used:
 
-- STASH_extract/check_pp_readable.py
+- STASH_Processing/check_pp_readable.py
 
 ## Workflow: sort_model_output.py
 
@@ -72,7 +72,7 @@ deletes checksum files.
 
 Run:
 
-python STASH_extract/sort_model_output.py
+python STASH_Processing/sort_model_output.py
 
 Inputs:
 
@@ -84,13 +84,17 @@ Output updates:
 - In-place file moves/renames under Model_Output/{suite}/
 - Restart dumps moved to Model_Output/{suite}/restart_dumps/
 
+Use clean_restart_dumps.py to remove quarterly restart dumps (months 04, 07, 10)
+from Model_Output/{suite}/restart_dumps/
+Useful for reclaiming disk space when long model integrations have finished
+
 ## Workflow: stash_extraction.py
 
 Interactive extraction driver for one package or custom STASH list.
 
 Run:
 
-python STASH_extract/stash_extraction.py
+python STASH_Processing/stash_extraction.py
 
 Inputs:
 
@@ -102,15 +106,15 @@ Inputs:
 Generated files:
 
 - Extraction config YAML:
-  - STASH_extract/run/stash_extract/{suite}\_{package}\_{start}\_{end}.yaml
+  - STASH_Processing/run/stash_extract/{suite}\_{package}\_{start}\_{end}.yaml
 - Sbatch script:
-  - STASH_extract/run/sbatch_scripts/{suite}\_{package}\_{start}\_{end}.sbatch
+  - STASH_Processing/run/sbatch_scripts/{suite}\_{package}\_{start}\_{end}.sbatch
 - Log file:
-  - STASH_extract/run/logs/{suite}\_{package}\_{start}-{end}.out
+  - STASH_Processing/run/logs/{suite}\_{package}\_{start}-{end}.out
 
 Worker used:
 
-- STASH_extract/um_extract_sbatch.py
+- STASH_Processing/um_extract_sbatch.py
 
 Output data location:
 
@@ -151,7 +155,7 @@ It submits a fixed package set for one suite/time window.
 
 Run:
 
-python STASH_extract/extract_climate.py
+python STASH_Processing/extract_climate.py
 
 Default package set:
 
@@ -160,15 +164,15 @@ Default package set:
 Generated files (one per package):
 
 - Extraction config YAML:
-  - STASH_extract/run/stash_extract/{suite}\_{package}\_{start}\_{end}.yaml
+  - STASH_Processing/run/stash_extract/{suite}\_{package}\_{start}\_{end}.yaml
 - Sbatch script:
-  - STASH_extract/run/sbatch_scripts/{suite}\_{package}\_{start}\_{end}.sbatch
+  - STASH_Processing/run/sbatch_scripts/{suite}\_{package}\_{start}\_{end}.sbatch
 - Log file:
-  - STASH_extract/run/logs/{suite}\_{package}\_{start}-{end}.out
+  - STASH_Processing/run/logs/{suite}\_{package}\_{start}-{end}.out
 
 Worker used:
 
-- STASH_extract/um_extract_sbatch.py
+- STASH_Processing/um_extract_sbatch.py
 
 Output data location:
 
@@ -180,7 +184,7 @@ Interactive monthly-mean driver that processes extracted files and writes one co
 
 Run:
 
-python STASH_extract/stash_mon_mn.py
+python STASH_Processing/stash_mon_mn.py
 
 Inputs:
 
@@ -192,15 +196,15 @@ Inputs:
 Generated files:
 
 - Monthly config YAML:
-  - STASH_extract/run/monthly_mean/{suite}\_mon_mn\_{start}-{end}.yaml
+  - STASH_Processing/run/monthly_mean/{suite}\_mon_mn\_{start}-{end}.yaml
 - Sbatch script:
-  - STASH_extract/run/sbatch_scripts/{suite}\_mon_mn\_{start}-{end}.sbatch
+  - STASH_Processing/run/sbatch_scripts/{suite}\_mon_mn\_{start}-{end}.sbatch
 - Log file:
-  - STASH_extract/run/logs/{suite}\_mon_mn\_{start}-{end}.out
+  - STASH_Processing/run/logs/{suite}\_mon_mn\_{start}-{end}.out
 
 Worker used:
 
-- STASH_extract/um_mon_mn_sbatch.py
+- STASH_Processing/um_mon_mn_sbatch.py
 
 Output data location:
 

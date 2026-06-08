@@ -17,7 +17,7 @@ pd.options.mode.copy_on_write = True
 
 
 def _root_dir():
-    # Resolve STASH_extract root directory; used by path helpers in this module.
+    # Resolve STASH_Processing root directory; used by path helpers in this module.
     return os.path.dirname(os.path.dirname(__file__))
 
 
@@ -27,12 +27,12 @@ def workspace_dir():
 
 
 def _config_dir():
-    # Resolve STASH_extract config directory; used by YAML and template readers.
+    # Resolve STASH_Processing config directory; used by YAML and template readers.
     return os.path.join(_root_dir(), "config")
 
 
 def _load_yaml(filename):
-    # Load a YAML file from STASH_extract/config; used by package/version helpers.
+    # Load a YAML file from STASH_Processing/config; used by package/version helpers.
     path = os.path.join(_config_dir(), filename)
     with open(path, "r") as handle:
         return yaml.safe_load(handle) or {}

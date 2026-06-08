@@ -1,5 +1,5 @@
 # Submit climate extraction jobs for a predefined package list across one time window.
-# Writes YAML extraction configs and sbatch scripts within STASH_extract/run.
+# Writes YAML extraction configs and sbatch scripts within STASH_Processing/run.
 
 import os
 import subprocess
