@@ -5,7 +5,7 @@ import time
 
 import numpy as np
 
-from src import um_stash_extract_funcs as umstash
+import src.um_stash_extract_funcs as umstash
 
 
 def get_output_dirs(suite_path, cycles):

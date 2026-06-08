@@ -5,7 +5,7 @@ import time
 
 import xarray as xr
 
-from src import um_stash_extract_funcs as umstash
+import src.um_stash_extract_funcs as umstash
 
 ROOT_DIR = os.path.dirname(__file__)
 WORKSPACE_DIR = os.path.dirname(ROOT_DIR)

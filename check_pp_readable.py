@@ -7,7 +7,7 @@ import sys
 import time
 from concurrent.futures import ProcessPoolExecutor, as_completed
 
-from src import um_stash_extract_funcs as umstash
+import src.um_stash_extract_funcs as umstash
 from src.pp_check_utils import iso, load_pp_check_config, load_state, newest_pp_time, state_write
 
 STATE_PATH = os.path.join(umstash._root_dir(), "config", "pp_check_state.json")

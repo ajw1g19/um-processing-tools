@@ -12,7 +12,7 @@ import pandas as pd
 import xarray as xr
 import yaml
 
-from src import um_stash_extract_funcs as umstash
+import src.um_stash_extract_funcs as umstash
 from src.um_metadata import get_metadata
 
 ROOT_DIR = os.path.dirname(__file__)

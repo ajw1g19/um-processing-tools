@@ -5,7 +5,7 @@ import os
 import pandas as pd
 import yaml
 
-from src import um_stash_extract_funcs as umstash
+import src.um_stash_extract_funcs as umstash
 
 ROOT_DIR = os.path.dirname(__file__)
 RUN_DIR = os.path.join(ROOT_DIR, "run")

@@ -2,7 +2,7 @@ import os
 import subprocess
 import sys
 
-from src import um_stash_extract_funcs as umstash
+import src.um_stash_extract_funcs as umstash
 from src.pp_check_utils import iso, load_state, newest_pp_time, state_write, write_sbatch_pp_check
 
 ROOT_DIR = umstash._root_dir()

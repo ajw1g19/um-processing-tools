@@ -2,7 +2,7 @@ import os
 import sys
 import time
 
-from src import um_stash_extract_funcs as umstash
+import src.um_stash_extract_funcs as umstash
 
 TARGET_MONTH_CODES = ("04", "07", "10")
 
