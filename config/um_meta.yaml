@@ -665,6 +665,7 @@ can_water_tile:
   attrs:
     long_name: Canopy Water on Tiles
     units: kg m-2
+  tiles: 16
 
 tas_tile:
   dims: [time, surface_tiles, latitude, longitude]
