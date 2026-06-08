@@ -1,0 +1,84 @@
+================================================================
+                      STASH EXTRACTION JOB                      
+----------------------------------------------------------------
+  Suite       : u-df326
+  Years       : 1850 to 1860
+  Package     : wind
+  Requests    : 2
+  Output dir  : /gws/ssde/j25b/mh_gsp/Processed_Output/u-df326
+================================================================
+ 
+                         STASH REQUESTS                         
+----------------------------------------------------------------
+ 
+                          STASH_NAME         CF_NAME SECTION ITEM OUTPUT_FILE  LEVELS DOMAIN     TIME  INDEX
+0  U COMPNT OF WIND ON P LEV/UV GRID   eastward_wind      30  201          ph      17   DP17  T6HMONM      0
+1  V COMPNT OF WIND ON P LEV/UV GRID  northward_wind      30  202          ph      17   DP17  T6HMONM      2
+ 
+----------------------------------------------------------------
+ 
+Output directory exists
+ 
+----------------------------------------------------------------
+ 
+Extracting fields year-by-year...
+
+Year complete: 1856 (1/10)
+Year complete: 1854 (2/10)
+Year complete: 1857 (3/10)
+Year complete: 1853 (4/10)
+Year complete: 1851 (5/10)
+Year complete: 1858 (6/10)
+Year complete: 1852 (7/10)
+Year complete: 1859 (8/10)
+Year complete: 1855 (9/10)
+Year complete: 1850 (10/10)
+ 
+Time elapsed: 186.01 s
+ 
+----------------------------------------------------------------
+ 
+Processing item 30201: UM_m01s30i201_vn1302
+ 
+Combining 10 .nc files
+Files combined successfully with new shape: (120, 17, 145, 192)
+ 
+Time elapsed: 4.52 s
+ 
+Removing unwanted variables and fixing metadata...
+Dropped vars: ['time_bounds', 'bounds', 'bounds_1']
+New var name: u_wind
+ 
+Writing and compressing adjusted file...
+File written: /gws/ssde/j25b/mh_gsp/Processed_Output/u-df326/u_wind_185001-185912.nc
+ 
+Time elapsed: 5.62 s
+ 
+Removing uncombined files...
+Done!
+ 
+----------------------------------------------------------------
+ 
+Processing item 30202: UM_m01s30i202_vn1302
+ 
+Combining 10 .nc files
+Files combined successfully with new shape: (120, 17, 145, 192)
+ 
+Time elapsed: 2.73 s
+ 
+Removing unwanted variables and fixing metadata...
+Dropped vars: ['time_bounds', 'bounds', 'bounds_1']
+New var name: v_wind
+ 
+Writing and compressing adjusted file...
+File written: /gws/ssde/j25b/mh_gsp/Processed_Output/u-df326/v_wind_185001-185912.nc
+ 
+Time elapsed: 6.31 s
+ 
+Removing uncombined files...
+Done!
+ 
+----------------------------------------------------------------
+ 
+Time elapsed: 205.26 s
+Node: host1078.jc.rl.ac.uk

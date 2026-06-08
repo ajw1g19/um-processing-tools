@@ -45,6 +45,7 @@ mon_mn_file = umstash.monthly_output_file(suite, start_yr, end_yr)
 
 existing_vars = []
 if os.path.isfile(mon_mn_file):
+    print(" ")
     print(f"Monthly means file exists for {suite} and dates {start_yr}-{end_yr}")
     print("Loading variables...")
 

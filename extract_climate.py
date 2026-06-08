@@ -76,8 +76,6 @@ for package_name in package_names:
     print(" ")
     input("Press Enter to continue...")
     print(" ")
-    print("-" * 50)
-    print(" ")
 
     stash_extract_norm = stash_extract.copy()
     stash_extract_norm["SECTION"] = (
@@ -106,13 +104,13 @@ for package_name in package_names:
     )
     extract_configs.append((package_name, config_file))
 
+    print(" ")
+    print("-" * 50)
+    print(" ")
+
 if not extract_configs:
     print("No extraction configs were generated. Exiting...")
     sys.exit(1)
-
-print(" ")
-print("-" * 50)
-print(" ")
 
 sbatch_files = []
 for package_name, config_file in extract_configs:
