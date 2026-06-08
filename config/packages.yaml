@@ -1,0 +1,182 @@
+packages:
+  spinup:
+    items:
+      - {SECTION: "00", ITEM: "024", OUTPUT_FILE: "pa", DOMAIN: "DIAG"}
+      - {SECTION: "01", ITEM: "207", OUTPUT_FILE: "pa", DOMAIN: "DIAG"}
+      - {SECTION: "01", ITEM: "208", OUTPUT_FILE: "pa", DOMAIN: "DIAG"}
+      - {SECTION: "03", ITEM: "236", OUTPUT_FILE: "pa", DOMAIN: "DIAG"}
+      - {SECTION: "03", ITEM: "332", OUTPUT_FILE: "pa", DOMAIN: "DIAG"}
+      - {SECTION: "05", ITEM: "216", OUTPUT_FILE: "pa", DOMAIN: "DIAG"}
+
+  surfacefrac:
+    items:
+      - {SECTION: "19", ITEM: "013", OUTPUT_FILE: "pt", DOMAIN: "DTILE"}
+
+  soil-moisture:
+    items:
+      - {SECTION: "08", ITEM: "223", OUTPUT_FILE: "pt", DOMAIN: "DSOIL"}
+      - {SECTION: "08", ITEM: "229", OUTPUT_FILE: "pt", DOMAIN: "DSOIL"}
+      - {SECTION: "08", ITEM: "230", OUTPUT_FILE: "pt", DOMAIN: "DSOIL"}
+      - {SECTION: "08", ITEM: "225", OUTPUT_FILE: "pt", DOMAIN: "DSOIL"}
+    rules:
+      - when: "stash_vn > 4"
+        set: {OUTPUT_FILE: "pv"}
+        apply_to: all
+
+  soil-cn:
+    items:
+      - {SECTION: "19", ITEM: "016", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "19", ITEM: "145", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "19", ITEM: "021", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "19", ITEM: "022", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "19", ITEM: "023", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "19", ITEM: "024", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "19", ITEM: "141", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "19", ITEM: "142", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "19", ITEM: "143", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "19", ITEM: "144", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "19", ITEM: "146", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+
+  veg:
+    items:
+      - {SECTION: "03", ITEM: "318", OUTPUT_FILE: "pt", DOMAIN: "DPFTS"}
+      - {SECTION: "03", ITEM: "319", OUTPUT_FILE: "pt", DOMAIN: "DPFTS"}
+      - {SECTION: "19", ITEM: "002", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "19", ITEM: "137", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+    append:
+      - when: "stash_vn > 2"
+        items:
+          - {SECTION: "19", ITEM: "001", OUTPUT_FILE: "pt", DOMAIN: "DPFTS"}
+      - when: "stash_vn > 4"
+        items:
+          - {SECTION: "19", ITEM: "136", OUTPUT_FILE: "pt", DOMAIN: "DPFTS"}
+
+  productivity:
+    items:
+      - {SECTION: "03", ITEM: "261", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "03", ITEM: "289", OUTPUT_FILE: "pt", DOMAIN: "DPFTS"}
+      - {SECTION: "03", ITEM: "662", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "03", ITEM: "691", OUTPUT_FILE: "pt", DOMAIN: "DPFTS"}
+      - {SECTION: "03", ITEM: "663", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "03", ITEM: "692", OUTPUT_FILE: "pt", DOMAIN: "DPFTS"}
+      - {SECTION: "19", ITEM: "104", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+    append:
+      - when: "stash_vn > 2"
+        items:
+          - {SECTION: "19", ITEM: "101", OUTPUT_FILE: "pt", DOMAIN: "DPFTS"}
+          - {SECTION: "03", ITEM: "313", OUTPUT_FILE: "pt", DOMAIN: "DPFTS"}
+      - when: "stash_vn > 4"
+        items:
+          - {SECTION: "19", ITEM: "103", OUTPUT_FILE: "pt", DOMAIN: "DPFTS"}
+
+  inor-npool:
+    items:
+      - {SECTION: "19", ITEM: "146", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "19", ITEM: "112", OUTPUT_FILE: "pt", DOMAIN: "DPFTS"}
+      - {SECTION: "19", ITEM: "113", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "19", ITEM: "159", OUTPUT_FILE: "pt", DOMAIN: "DPFTS"}
+      - {SECTION: "19", ITEM: "160", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "19", ITEM: "181", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "19", ITEM: "171", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "19", ITEM: "161", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "19", ITEM: "115", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "19", ITEM: "114", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "19", ITEM: "116", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+
+  surfrad:
+    items:
+      - {SECTION: "01", ITEM: "201", OUTPUT_FILE: "pm", DOMAIN: "DIAG"}
+      - {SECTION: "01", ITEM: "235", OUTPUT_FILE: "pm", DOMAIN: "DIAG"}
+    append:
+      - when: "stash_vn > 2"
+        items:
+          - {SECTION: "03", ITEM: "382", OUTPUT_FILE: "pm", DOMAIN: "DTILE"}
+
+  precip:
+    items:
+      - {SECTION: "05", ITEM: "205", OUTPUT_FILE: "pm", DOMAIN: "DIAG"}
+      - {SECTION: "05", ITEM: "206", OUTPUT_FILE: "pm", DOMAIN: "DIAG"}
+      - {SECTION: "05", ITEM: "214", OUTPUT_FILE: "pm", DOMAIN: "DIAG"}
+      - {SECTION: "05", ITEM: "215", OUTPUT_FILE: "pm", DOMAIN: "DIAG"}
+
+  wind:
+    items:
+      - {SECTION: "30", ITEM: "201", OUTPUT_FILE: "ph", DOMAIN: "DP17"}
+      - {SECTION: "30", ITEM: "202", OUTPUT_FILE: "ph", DOMAIN: "DP17"}
+    rules:
+      - when: "stash_vn > 2"
+        set: {DOMAIN: "DP28"}
+        apply_to: all
+
+  pressure:
+    items:
+      - {SECTION: "00", ITEM: "409", OUTPUT_FILE: "pm", DOMAIN: "DIAG"}
+
+  toarad:
+    items:
+      - {SECTION: "01", ITEM: "207", OUTPUT_FILE: "pa", DOMAIN: "DIAG"}
+      - {SECTION: "01", ITEM: "208", OUTPUT_FILE: "pa", DOMAIN: "DIAG"}
+      - {SECTION: "03", ITEM: "332", OUTPUT_FILE: "pa", DOMAIN: "DIAG"}
+
+  precip-daily:
+    items:
+      - {SECTION: "05", ITEM: "216", OUTPUT_FILE: "pd", DOMAIN: "DIAG"}
+
+  precip-hourly:
+    items:
+      - {SECTION: "05", ITEM: "216", OUTPUT_FILE: "pb", DOMAIN: "DIAG"}
+
+  evap:
+    items:
+      - {SECTION: "03", ITEM: "296", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "03", ITEM: "297", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "03", ITEM: "287", OUTPUT_FILE: "pt", DOMAIN: "DTILE"}
+      - {SECTION: "03", ITEM: "539", OUTPUT_FILE: "pt", DOMAIN: "DIAG"}
+      - {SECTION: "03", ITEM: "540", OUTPUT_FILE: "pt", DOMAIN: "DTILE"}
+      - {SECTION: "03", ITEM: "288", OUTPUT_FILE: "pt", DOMAIN: "DTILE"}
+    rules:
+      - when: "stash_vn > 4"
+        set: {OUTPUT_FILE: "pv"}
+        apply_to: all
+
+  seaice:
+    items:
+      - {SECTION: "00", ITEM: "031", OUTPUT_FILE: "pm", DOMAIN: "DIAG"}
+      - {SECTION: "00", ITEM: "032", OUTPUT_FILE: "pm", DOMAIN: "DIAG"}
+
+  dust:
+    items:
+      - {SECTION: "03", ITEM: "401", OUTPUT_FILE: "pu", DOMAIN: "DIAG"}
+      - {SECTION: "03", ITEM: "402", OUTPUT_FILE: "pu", DOMAIN: "DIAG"}
+      - {SECTION: "03", ITEM: "403", OUTPUT_FILE: "pu", DOMAIN: "DIAG"}
+      - {SECTION: "03", ITEM: "404", OUTPUT_FILE: "pu", DOMAIN: "DIAG"}
+      - {SECTION: "03", ITEM: "405", OUTPUT_FILE: "pu", DOMAIN: "DIAG"}
+      - {SECTION: "03", ITEM: "406", OUTPUT_FILE: "pu", DOMAIN: "DIAG"}
+      - {SECTION: "03", ITEM: "440", OUTPUT_FILE: "pu", DOMAIN: "DIAG"}
+
+  con-precip:
+    items:
+      - {SECTION: "05", ITEM: "277", OUTPUT_FILE: "pm", DOMAIN: "DIAG"}
+      - {SECTION: "05", ITEM: "278", OUTPUT_FILE: "pm", DOMAIN: "DIAG"}
+      - {SECTION: "05", ITEM: "279", OUTPUT_FILE: "pm", DOMAIN: "DIAG"}
+    rules:
+      - when: "stash_vn > 2.1"
+        set: {OUTPUT_FILE: "pc"}
+        apply_to: all
+
+  conscheme:
+    items:
+      - {SECTION: "05", ITEM: "269", OUTPUT_FILE: "pm", DOMAIN: "DIAG"}
+      - {SECTION: "05", ITEM: "270", OUTPUT_FILE: "pm", DOMAIN: "DIAG"}
+      - {SECTION: "05", ITEM: "272", OUTPUT_FILE: "pm", DOMAIN: "DIAG"}
+      - {SECTION: "05", ITEM: "319", OUTPUT_FILE: "pm", DOMAIN: "D52TH"}
+    rules:
+      - when: "stash_vn > 2.1"
+        set: {OUTPUT_FILE: "pc"}
+        apply_to: all
+      - when: "stash_vn > 2.2"
+        set: {OUTPUT_FILE: "pc", DOMAIN: "DALLTH"}
+        apply_to_indices: [3]
+
+  plevs:
+    items: []

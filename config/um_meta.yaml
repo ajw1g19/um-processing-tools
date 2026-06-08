@@ -1,0 +1,2446 @@
+u_wind_rho:
+  dims: [time, rho_lev, latitude, longitude]
+  attrs:
+    long_name: Eastward (U) wind component on Rho Levels
+    units: m s-1
+    standard_name: eastward_wind
+
+v_wind_rho:
+  dims: [time, rho_lev, latitude, longitude]
+  attrs:
+    long_name: Northward (V) wind component on Rho Levels
+    units: m s-1
+    standard_name: northward_wind
+
+theta:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Potential Temperature on Theta Levels
+    units: K
+    standard_name: air_potential_temperature
+
+q:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Specific Humidity at 1.5 m
+    units: kg kg-1
+
+qcf:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Ice Content (cloud condensate) per kg of Air on Theta Levels
+    units: kg kg-1
+    standard_name: mass_fraction_of_cloud_ice_in_air
+
+snow:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Snow Amount over Land
+    units: kg m-2
+    standard_name: snowfall_amount
+
+ts:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Surface Temperature
+    units: K
+    standard_name: surface_temperature
+  convert: temp
+
+blayer_depth:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Boundary Layer Depth
+    units: m
+    standard_name: atmosphere_boundary_layer
+
+zonal_current:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Surface Zonal (Eastward) Sea Water Velocity
+    units: m s-1
+    standard_name: surface_eastward_sea_water_velocity
+
+merid_current:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Surface Meridional (Northward) Sea Water Velocity
+    units: m s-1
+    standard_name: surface_northward_sea_water_velocity
+
+land_mask:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Land Mask (Land = True)
+    standard_name: land_binary_mask
+
+sifrac:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Sea Ice Fraction
+    standard_name: sea_ice_area_fraction
+    units: 0-1
+
+sithick:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Mean Sea Ice Thickness
+    standard_name: sea_ice_thickness
+    units: m
+
+orography:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Orography - Surface Altitude
+    units: m
+    standard_name: surface_altitude
+
+ocean_chloro:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Near Surface Ocean Chlorophyll
+    units: kg m-3
+
+dms:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: DMS Concentration in Seawater
+
+w_wind_theta:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Vertical (W) Component of Wind on Theta Levels
+    units: m s-1
+    standard_name: upward_air_velocity
+
+cca_anvil:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: CCA WITH ANVIL AFTER TIMESTEP
+    units: ""
+
+qcl:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Liquid Water Content (cloud condensate) per kg of Air on Theta Levels
+    units: kg kg-1
+    standard_name: mass_fraction_of_cloud_liquid_water_in_air
+
+cloud_frac:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Volume Fraction of Gridbox covered in Cloud
+
+p_rho_lev:
+  dims: [time, rho_lev, latitude, longitude]
+  attrs:
+    long_name: Pressure at Rho Levels after Timestep
+    standard_name: p_levs
+    units: Pa
+
+p_theta_lev:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Pressure at Theta Levels after Timestep
+    standard_name: p_levs
+    units: Pa
+
+surfpress:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Surface Pressure after Timestep
+    standard_name: surface_p_levs
+    units: Pa
+
+dust_div1_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Dust division 1 mass mixing ratio
+    units: kg kg-1
+
+dust_div2_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Dust division 2 mass mixing ratio
+    units: kg kg-1
+
+dust_div3_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Dust division 3 mass mixing ratio
+    units: kg kg-1
+
+dust_div4_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Dust division 4 mass mixing ratio
+    units: kg kg-1
+
+dust_div5_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Dust division 5 mass mixing ratio
+    units: kg kg-1
+
+dust_div6_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Dust division 6 mass mixing ratio
+    units: kg kg-1
+
+open_sst:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Surface Temperature of the Open Sea part of the Gridbox
+    units: "K"
+    standard_name: surface_temperature
+  convert: temp
+
+seaice_temp:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Surface Temperature of the Sea-Ice part of the Gridbox
+    units: K
+    standard_name: surface_temperature
+  convert: temp
+
+seaice_alb:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Sea-Ice Albedo
+    units: 0-1
+    standard_name: sea_ice_albedo
+
+zenith_angle:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Cosine of the Solar Zenith Angle
+    units: 0-1
+
+daylight_frac:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Fraction of timestep where Sun is above horizon
+
+net_ssw:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Net Downward Surface SW Flux
+    standard_name: surface_net_downward_shortwave_flux
+    units: W m-2
+    positive: down
+
+open_sea_net_ssw:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Net Down SW Radiation over the Open Sea
+    units: W m-2
+    standard_name: surface_net_downward_shortwave_flux
+
+toa_sw_in:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: TOA Incoming SW Radiation Flux
+    units: W m-2
+    standard_name: toa_incoming_shortwave_flux
+
+toa_sw_out:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: TOA Outgoing SW Radiation Flux
+    units: W m-2
+    standard_name: toa_outgoing_shortwave_flux
+
+clear_sky_toa_sw_out:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: TOA Outgoing SW Radiation Assuming Clear Sky
+    units: W m-2
+    standard_name: toa_outgoing_shortwave_flux_assuming_clear_sky
+
+clear_sky_down_ssw:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Surface Downward SW Radiation Assuming Clear Sky
+    units: W m-2
+    standard_name: surface_downwelling_shortwave_flux_in_air_assuming_clear_sky
+
+clear_sky_up_ssw:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Surface Upward SW Radiation Assuming Clear Sky
+    units: W m-2
+    standard_name: surface_upwelling_shortwave_flux_in_air_assuming_clear_sky
+
+down_ssw:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Surface Downwelling Shortwave Flux
+    units: W m-2
+    standard_name: surface_downwelling_shortwave_flux_in_air
+
+open_sea_vis_net_ssw:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Net Down SW Radiation below 690 nm over Open Sea
+    units: W m-2
+
+vis_alb_scal:
+  dims: [time, surface_tiles, latitude, longitude]
+  attrs:
+    long_name: Visable Albedo Scaling Factor
+
+nir_alb_scal:
+  dims: [time, surface_tiles, latitude, longitude]
+  attrs:
+    long_name: NIR Albedo Scaling Factor
+
+ice_down_ssw:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Downward SW Radiation multiplied by Sea-Ice Fraction
+    units: W m-2
+
+ice_up_ssw:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Upward SW Radiation multiplied by Sea-Ice Fraction
+    units: W m-2
+
+seaice_alb_wght:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Aggregate Sea-Ice Albedo
+    units: 0-1
+
+net_slw:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Net Downward Surface LW Flux
+    standard_name: surface_net_downward_longwave_flux
+    units: W m-2
+
+open_sea_net_slw:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Net Down LW Radiation over the Open Sea
+    units: W m-2
+    standard_name: surface_net_downward_longwave_flux
+
+toa_lw_out:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: TOA Outgoing LW Radiation Flux
+    units: W m-2
+    standard_name: toa_outgoing_longwave_flux
+
+clear_sky_toa_lw_out:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: TOA Outgoing LW Radiation Assuming Clear Sky
+    units: W m-2
+    standard_name: toa_outgoing_longwave_flux_assuming_clear_sky
+
+down_slw:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Surface Downward LW Radiation
+    units: W m-2
+    standard_name: surface_downwelling_longwave_flux_in_air
+
+clear_sky_down_slw:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Surface Downward LW Radiation Assuming Clear Sky
+    units: W m-2
+    standard_name: surface_downwelling_longwave_flux_in_air_assuming_clear_sky
+
+min_dust_od_radn:
+  dims: [time, band, latitude, longitude]
+  attrs:
+    long_name: Mineral Dust Aerosol Optical Depth
+
+ls_qcl_path:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Vertical Integral of LS QCL and Layer Mass
+    units: kg m-2
+
+ls_qcf_path:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Vertical Integral of LS QCF and Layer Mass
+    units: kg m-2
+
+conv_qcl_path:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Vertical Integral of CONV QCL and Layer Mass
+    units: kg m-2
+
+conv_qcf_path:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Vertical Integral of CONV QCF and Layer Mass
+    units: kg m-2
+
+dust_od:
+  dims: [time, band, latitude, longitude]
+  attrs:
+    long_name: Mineral Dust Aerosol Optical Depth from Prognostic Scheme
+
+ice_down_slw:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Downward LW Radiation multiplied by Sea-Ice Fraction
+    units: W m-2
+
+ukca_aero_ext:
+  dims: [time, theta_lev, band, latitude, longitude]
+  attrs:
+    long_name: Aerosol Extinction Coefficient from UKCA Radaer
+    units: m-1
+
+classic_aero_ext:
+  dims: [time, theta_lev, band, latitude, longitude]
+  attrs:
+    long_name: Aerosol Extinction Coefficient from Classic Aerosols
+    units: m-1
+
+min_dust_abs_od:
+  dims: [time, band, latitude, longitude]
+  attrs:
+    long_name: Mineral Dust Absorption Aerosol Optical Depth
+
+ice_down_heat_flux:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Heat Flux through Sea-Ice
+    units: W m-2
+    standard_name: downward_heat_flux_in_sea_ice
+
+sen_heat:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Surface Sensible Heat Flux
+    units: W m-2
+
+surf_wind_u_stress:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: X-Component of Surface and Boundary Layer Wind Stress
+    units: N m-2
+    standard_name: surface_downward_eastward_stress
+
+surf_wind_v_stress:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Y-Component of Surface and Boundary Layer Wind Stress
+    units: N m-2
+    standard_name: surface_downward_northward_stress
+
+moist_flux:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total surface Moisture Flux
+    standard_name: surface_upward_water_flux
+    units: kg m-2 s-1
+
+wind_mix_energy:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Wind Mixing Energy Flux into Open Sea
+    units: W m-2
+    standard_name: wind_mixing_energy_flux_into_sea_water
+
+u_wind_10:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Eastward (U) Wind Speed at 10 m
+    units: m s-1
+    standard_name: eastward_wind
+
+v_wind_10:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Northward (V) Wind Speed at 10 m
+    units: m s-1
+    standard_name: northward_wind
+
+wind_speed_10:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Wind Speed at 10 m (B Grid)
+    units: m s-1
+    standard_name: wind_speed
+
+open_sea_sen_heat:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Sensible Heat Flux from Open Sea
+    units: W m-2
+    standard_name: surface_upward_sensible_heat_flux
+
+wind_speed:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Wind Speed at 10 m (C Grid)
+    units: m s-1
+    standard_name: wind_speed
+
+sublimation:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Surface Sublimation Rate
+    units: kg m-2 s-1
+    standard_name: water_sublimation_flux
+
+open_sea_evap:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Evaporation from the Open Sea
+    units: kg m-2 s-1
+
+lat_heat:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Surface Latent Heat Flux
+    standard_name: surface_upward_latent_heat_flux
+    units: W m-2
+
+seaice_lat_heat:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Latent Heat Flux from melting of Sea-Ice top layer
+    units: W m-2
+
+tas:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: 1.5 m Air Temperature
+    units: K
+    standard_name: air_temperature
+  convert: temp
+
+relhum:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Relative Humidity at 1.5 m
+    standard_name: relative_humidity
+    units: "%"
+
+melt_heat_flux:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Surface snow melt heat flux
+    standard_name: surface_snow_melt_heat_flux
+    units: W m-2
+
+gpp:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Gross Primary Productivity GBM (pre-N-limit)
+    units: kgC m-2 s-1
+  convert: psec2pyr
+
+can_evap_tile:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Canopy Evaporation on Tiles
+    units: kg m-2 s-1
+  tiles: 13
+
+trans_soil_evap_tile:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Transpiration + Soil Evaporation on Tiles
+    units: kg m-2 s-1
+  tiles: 13
+
+gpp_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Gross Primary Productivity on PFTs (pre-N-limit)
+    units: kgC m-2 s-1
+  convert: psec2pyr
+
+sen_heat_tile:
+  dims: [time, surface_tiles, latitude, longitude]
+  attrs:
+    long_name: Surface Sensible Heat Flux on Tiles
+    units: W m-2
+  tiles: 16
+
+soil_c_resp:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Soil Respiration of Carbon
+    units: kgC m-2 s-1
+    standard_name: soil_respiration_carbon_flux
+
+soil_evap:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Soil Evaporation
+    standard_name: water_evaporation_flux
+    units: kg m-2 s-1
+
+can_evap:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Canopy Evaporation
+    standard_name: water_evaporation_flux_from_canopy
+    units: kg m-2 s-1
+
+mixing_ht:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Maximum Height of Turbulent Mixing
+    units: m
+
+stable_bl_ind:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Indicator of a stable Boundary Layer (bouyancy flux < 0)
+
+strato_bl_ind:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Unstable Cloud Layer over Stable Boundary Layer Indicator
+
+mixed_bl_ind:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Indicator for an unstable Well-Mixed Boundary Layer
+
+decoup_strato_not_ind:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: DECOUPLED SC. NOT OVER CU. INDICATOR
+
+decoup_strato_ov_ind:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: DECOUPLED SC. OVER CU. INDICATOR
+
+cumul_cap_bl_ind:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: CUMULUS-CAPPED BL INDICATOR
+
+beta_factor:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Moisture Availability Factor (beta) on PFTs
+    standard_name: soil_moisture_content_at_field_capacity
+    uints: 0-1
+
+ts_tile:
+  dims: [time, surface_tiles, latitude, longitude]
+  attrs:
+    long_name: Surface Temperature on Tiles
+    units: K
+  convert: temp
+  tiles: 16
+
+surfacefrac:
+  dims: [time, surface_tiles, latitude, longitude]
+  attrs:
+    long_name: Fractional Coverage of Plant Functional Types
+  tiles: 16
+
+lai:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Leaf Area Indices on PFTs
+
+can_hgt:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Canopy Height on PFTs
+    units: m
+
+can_water_tile:
+  dims: [time, surface_tiles, latitude, longitude]
+  attrs:
+    long_name: Canopy Water on Tiles
+    units: kg m-2
+
+tas_tile:
+  dims: [time, surface_tiles, latitude, longitude]
+  attrs:
+    long_name: 1.5 m Suface Temperature on Tiles
+    units: K
+  convert: temp
+  tiles: 16
+
+lat_heat_tile:
+  dims: [time, surface_tiles, latitude, longitude]
+  attrs:
+    long_name: Surface Latent Heat Flux on Tiles
+    units: W m-2
+  tiles: 16
+
+sublim_tile:
+  dims: [time, surface_tiles, latitude, longitude]
+  attrs:
+    long_name: Sumblimation Moisture Flux on Tiles
+    units: kg m-2 s-1
+
+shear_bl_ind:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Indicator of a shear-dominated unstable Boundary Layer (bouyancy flux > 0)
+
+seaice_sumblim:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Sumblimation over Sea-Ice
+    units: kg m-2 s-1
+
+neutral_u_wind_10:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: 10 METRE NEUTRAL WIND U-COMP B GRID
+    units: m s-1
+
+neutral_v_wind_10:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: 10 METRE NEUTRAL WIND V-COMP B GRID
+    units: m s-1
+
+neutral_wind_speed_10:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: 10 METRE NEUTRAL WIND SPEET B GRID
+    units: m s-1
+
+surf_pseudo_u_stress:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: X Component of Surface Pseudostress
+    units: m2 s-2
+
+surf_pseudo_v_stress:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Y Component of Surface Pseudostress
+    units: m2 s-1
+
+net_ssw_tile:
+  dims: [time, surface_tiles, latitude, longitude]
+  attrs:
+    long_name: Net Surface SW Radiation on Tiles
+    units: W m-2
+    positive: down
+  tiles: 16
+
+up_slw_tile:
+  dims: [time, surface_tiles, latitude, longitude]
+  attrs:
+    long_name: Upward Surface LW Radiation on Tiles
+    units: W m-2
+  tiles: 16
+
+down_slw_tile:
+  dims: [time, surface_tiles, latitude, longitude]
+  attrs:
+    long_name: Downward Surface LW Radiation on Tiles
+    units: W m-2
+  tiles: 16
+
+dust_div1:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust Emissions Division 1
+    units: kg m-2 s-1
+
+dust_div2:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust Emissions Division 2
+    units: kg m-2 s-1
+
+dust_div3:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust Emissions Division 3
+    units: kg m-2 s-1
+
+dust_div4:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust Emissions Division 4
+    units: kg m-2 s-1
+
+dust_div5:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust Emissions Division 5
+    units: kg m-2 s-1
+
+dust_div6:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust Emissions Division 6
+    units: kg m-2 s-1
+
+dust_frict_tile:
+  dims: [time, surface_tiles, latitude, longitude]
+  attrs:
+    long_name: Dust Friction Velocity on Tiles
+    units: m s-1
+
+dust_dep:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total Dust Deposition Flux
+    units: kg m-2 s-1
+
+dust_dry_dep1_div1:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust dry dep flux from lev 1 div 1
+    units: kg m-2 s-1
+
+dust_dry_dep1_div2:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust dry dep flux from lev 1 div 2
+    units: kg m-2 s-1
+
+dust_dry_dep1_div3:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust dry dep flux from lev 1 div 3
+    units: kg m-2 s-1
+
+dust_dry_dep1_div4:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust dry dep flux from lev 1 div 4
+    units: kg m-2 s-1
+
+dust_dry_dep1_div5:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust dry dep flux from lev 1 div 5
+    units: kg m-2 s-1
+
+dust_dry_dep1_div6:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust dry dep flux from lev 1 div 6
+    units: kg m-2 s-1
+
+dust_dry_dep2_div1:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust dry dep flux from lev 2 div 1
+    units: kg m-2 s-1
+
+dust_dry_dep2_div2:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust dry dep flux from lev 2 div 2
+    units: kg m-2 s-1
+
+dust_dry_dep2_div3:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust dry dep flux from lev 2 div 3
+    units: kg m-2 s-1
+
+dust_dry_dep2_div4:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust dry dep flux from lev 2 div 4
+    units: kg m-2 s-1
+
+dust_dry_dep2_div5:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust dry dep flux from lev 2 div 5
+    units: kg m-2 s-1
+
+dust_dry_dep2_div6:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust dry dep flux from lev 2 div 6
+    units: kg m-2 s-1
+
+iso_emis_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Total Isoprene (C5H8) Emissions from plants on PFTs
+    units: kgC m-2 s-1
+
+terp_emis_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Total Terpene (C10H16) Emissions from plants on PFTs
+    units: kgC m-2 s-1
+
+meth_emis_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Total Methanol (CH3OH) Emissions from plants on PFTs
+    units: kgC m-2 s-1
+
+acet_emis_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Total Acetone (CH3COCH3) Emissions from plants on PFTs
+    units: kgC m-2 s-1
+
+iso_emis:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total Isoprene (C5H8) Emissions from plants
+    units: kgC m-2 s-1
+
+terp_emis:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total Terpene (C10H16) Emissions from plants
+    units: kgC m-2 s-1
+
+meth_emis:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total Methanol (CH3OH) Emissions from plants
+    units: kgC m-2 s-1
+
+acet_emis:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total Acetone (CH3COCH3) Emissions from plants
+    units: kgC m-2 s-1
+
+ice_up_slw:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Upward LW Radiation over Ice
+    units: W m-2
+
+ice_sen_heat:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Sensible Heat Flux over Ice
+    units: W m-2
+
+ice_tstar:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Sea-Ice Surface Temperature multiplied by sea-ice fraction
+    units: K
+  convert: temp
+
+seaice_time_frac:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Fraction of time that sea-ice is present
+
+sea_drag_coeff:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Drag Coefficient over open ocean, sea ice and pack ice
+
+trans:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Gridbox Mean Transpiration
+    units: kg m-2 s-1
+
+trans_tile:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Transpiration on Tiles
+    units: kg m-2 s-1
+  tiles: 13
+
+pot_npp:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Potential Net Primary Productivity GBM (pre-N-limit)
+    units: kgC m-2 s-1
+  convert: psec2pyr
+
+pot_resp:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Potential Plant Respiration GBM (pre-N-limit)
+    units: kgC m-2 s-1
+  convert: psec2pyr
+
+pot_npp_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Potential Net Primary Productivity on PFTs
+    units: kgC m-2 s-1
+  convert: psec2pyr
+
+pot_resp_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Potential Plant Respiration on PFTs
+    units: kgC m-2 s-1
+  convert: psec2pyr
+
+ls_rain:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Large-Scale Rainfall
+    units: kg m-2 s-1
+    standard_name: stratiform_rainfall_flux
+  convert: precip
+
+ls_snow:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Large-Scale Snowfall
+    units: kg m-2 s-1
+    standard_name: stratiform_snowfall_flux
+  convert: precip
+
+dust_wet_dep_ls_div1:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust wet dep flux ls precip div 1
+    units: kg m-2 s-1
+
+dust_wet_dep_ls_div2:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust wet dep flux ls precip div 2
+    units: kg m-2 s-1
+
+dust_wet_dep_ls_div3:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust wet dep flux ls precip div 3
+    units: kg m-2 s-1
+
+dust_wet_dep_ls_div4:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust wet dep flux ls precip div 4
+    units: kg m-2 s-1
+
+dust_wet_dep_ls_div5:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust wet dep flux ls precip div 5
+    units: kg m-2 s-1
+
+dust_wet_dep_ls_div6:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust wet dep flux ls precip div 6
+    units: kg m-2 s-1
+
+conv_rain:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Convective Rainfall
+    units: kg m-2 s-1
+    standard_name: convective_rainfall_flux
+  convert: precip
+
+conv_snow:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Convective Snowfall
+    units: kg m-2 s-1
+    standard_name: convective_snowfall_flux
+  convert: precip
+
+conv_temp:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Temperature after Convection
+    units: K
+    standard_name: air_temperature
+  convert: temp
+
+total_rain:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total Rainfall (Convective + Large-Scale)
+    units: kg m-2 s-1
+    standard_name: rainfall_flux
+  convert: precip
+
+total_snow:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total Snowfall (Convective + Large-Scale)
+    units: kg m-2 s-1
+    standard_name: snowfall_flux
+  convert: precip
+
+pr:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total Precipitation
+    units: kg m-2 s-1
+    standard_name: precipitation_flux
+  convert: precip
+
+cape_time:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: CAPE Timescale used in Deep Convection
+    units: s
+
+cape_time_ind:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Indicator of if the basic CAPE timescale has been reduced for deep convection
+
+mass_flux_up:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Updraught Mass Flux
+    units: Pa s-1
+
+mass_flux_down:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Downdraught Mass Flux
+    units: Pa s-1
+
+ent_rate_up:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Updraught Entrainment Rate
+    units: Pa s-1
+
+det_rate_up:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Updraught Detrainment Rate
+    units: Pa s-1
+
+ent_rate_down:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Downdraught Entrainment Rate
+    units: Pa s-1
+
+det_rate_down:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Downdraught Detrainment Rate
+    units: Pa s-1
+
+deep_ind:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Deep Convection Indicator
+
+shallow_ind:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Shallow Convection Indicator
+
+midlev_ind:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Mid-Level Convection Indicator
+
+deep_precip:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Deep Convective Precipitation
+    units: kg m-2 s-1
+  convert: precip
+
+shallow_precip:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Shallow Convective Precipitation
+    units: kg m-2 s-1
+  convert: precip
+
+midlev_precip:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Mid-Level Convective Precipitation
+    units: kg m-2 s-1
+  convert: precip
+
+dust_wet_dep_conv_div1:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust wet dep flux conv precip div 1
+    units: kg m-2 s-1
+
+dust_wet_dep_conv_div2:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust wet dep flux conv precip div 2
+    units: kg m-2 s-1
+
+dust_wet_dep_conv_div3:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust wet dep flux conv precip div 3
+    units: kg m-2 s-1
+
+dust_wet_dep_conv_div4:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust wet dep flux conv precip div 4
+    units: kg m-2 s-1
+
+dust_wet_dep_conv_div5:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust wet dep flux conv precip div 5
+    units: kg m-2 s-1
+
+dust_wet_dep_conv_div6:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dust wet dep flux conv precip div 6
+    units: kg m-2 s-1
+
+deep_conv_freq:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Frequency of Deep Convection Termination on Theta Levels
+
+mass_flux_deep:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Mass Flux of Deep Convection
+    units: Pa s-1
+
+mass_flux_shallow:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Mass Flux of Shallow Convection
+    units: Pa s-1
+
+mass_flux_midlev:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Mass Flux of Mid-Level Convection
+    units: Pa s-1
+
+snow_mass_hyd:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Snow Mass after hydrology
+    standard_name: surface_snow_amount
+    units: kg m-2
+
+sm:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Soil Moisture Content
+
+can_water:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total Canopy Water
+    standard_name: canopy_water_content
+    units: kg m-2
+
+soil_moisture:
+  dims: [time, depth, latitude, longitude]
+  attrs:
+    long_name: Soil Moisture Content in a Layer (Frozen + Unfrozen)
+    units: kg m-2
+    standard_name: moisture_content_of_soil_layer
+
+soil_temp:
+  dims: [time, depth, latitude, longitude]
+  attrs:
+    long_name: Soil Temperature on Levels
+    standard_name: soil_temperature
+    units: K
+
+unfrozen_smc:
+  dims: [time, depth, latitude, longitude]
+  attrs:
+    long_name: Unfrozen Soil Moisture Fraction (of Saturation)
+    standard_name: mass_fraction_of_unfrozen_water_in_soil_moisture
+
+frozen_smc:
+  dims: [time, depth, latitude, longitude]
+  attrs:
+    long_name: Frozen Soil Moisture Fraction (of Saturation)
+    standard_name: mass_fraction_of_frozen_water_in_soil_moisture
+
+melt_rate:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Melt rate of snow on land
+    standard_name: surface_snow_melt_flux
+    units: kg m-2 s-1
+  convert: precip
+
+thfall:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Canopy Throughfall Rate
+    uints: kg m-2 s-1
+
+surf_runoff:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Surface Runoff Rate
+    standard_name: surface_runoff_flux
+    units: kg m-2 s-1
+
+sub_runoff:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Sub-surface Runoff Rate
+    standard_name: subsurface_runoff_flux
+    units: kg m-2 s-1
+
+wetland_ch4:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Methane Flux from Wetlands to be used in UKCA
+    units: kgC m-2 s-1
+
+inland_basin_atm:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Inland Basin Outflow on Atmopshere Grid
+    units: kg m-2 s-1
+
+surf_sat_frac:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Surface Saturation Fraction
+
+surf_wetland_frac:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Surface Wetland Fraction
+
+water_tab_depth:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Water Table Depth
+    units: m
+
+deep_lyr_sat_frac:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Saturation Fraction in Deep Soil Layer
+
+wetland_ch4_cs:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Methane Flux from Wetlands if Soil Carbon is assumed to be the substrate
+    units: kgC m-2 s-1
+
+wetland_ch4_npp:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Methane Flux from Wetlands if Exudates are assumed to be the substrate
+    units: kgC m-2 s-1
+
+wetland_ch4_resp:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Methane Flux from Wetlands if Soil Resp. is assumed to be the substrate
+    units: kgC m-2 s-1
+
+sub_temp_tile:
+  dims: [time, surface_tiles, latitude, longitude]
+  attrs:
+    long_name: Temperature of Tiled Bedrock Subsurface Under Elevated Tiles
+    units: K
+
+snow_mass_balance:
+  dims: [time, surface_tiles, latitude, longitude]
+  attrs:
+    long_name: Snow mass balance on tiles
+    units: kg m-2 s-1
+  tiles: 16
+
+temp_theta_lev:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Temperature on Theta Levels
+    units: K
+    standard_name: air_temperature
+  convert: temp
+
+dust_conc:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Total Dust Concentration on Theta Levels
+    units: µg m-3
+
+veg_carbon_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Total Vegetation Carbon on PFTs
+    standard_name: vegetation_carbon_content
+    units: kgC m-2
+
+veg_carbon:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Vegetation Carbon
+    units: kgC m-2
+    standard_name: vegetation_carbon_content
+
+lit_c_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Litter Carbon flux from PFTs to the Soil
+    units: kgC m-2 yr-1
+
+lit_c:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Gridbox Mean Litter Carbon flux from PFTs to the Soil
+    units: kgC m-2 yr-1
+
+leaf_turn_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Leaf Turnover Rate on PFTs
+    units: kgC m-2 yr-1
+
+npp_triffid:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Potential Net Primary Productivity on PFTs for TRIFFID (pre-N-limit)
+    units: kgC m-2 s-1
+  convert: psec2pyr
+
+soil_resp:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total Soil Respiration Rate for TRIFFID
+    units: kgC m-2 yr-1
+
+total_cpool:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Soil Carbon Content
+    units: kgC m-2
+    standard_name: soil_carbon_content
+
+dpm_soil_resp:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: DPM Soil Respitation
+    units: kgC m-2 yr-1
+
+rpm_soil_resp:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: RPM Soil Respitation
+    units: kgC m-2 yr-1
+
+bio_soil_resp:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: BIO Soil Respitation
+    units: kgC m-2 yr-1
+
+hum_soil_resp:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: HUM Soil Respitation
+    units: kgC m-2 yr-1
+
+dpm_cpool:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: DPM Soil Carbon Pool
+    units: kgC m-2
+
+rpm_cpool:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: RPM Soil Carbon Pool
+    units: kgC m-2
+
+bio_cpool:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: BIO Soil Carbon Pool
+    units: kgC m-2
+
+hum_cpool:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: HUM Soil Carbon Pool
+    units: kgC m-2
+
+leaf_carbon_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Leaf Carbon on PFTs
+    units: kgC m-2
+    standard_name: leaf_carbon_content
+
+leaf_carbon:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Leaf Carbon (GBM)
+    units: kgC m-2
+    standard_name: leaf_carbon_content
+
+wood_carbon_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Wood Carbon on PFTs
+    units: kgC m-2
+    standard_name: wood_carbon_content
+
+wood_carbon:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Wood Carbon (GBM)
+    units: kgC m-2
+    standard_name: wood_carbon_content
+
+root_carbon_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Root Carbon on PFTs
+    units: kgC m-2
+    standard_name: root_carbon_content
+
+root_carbon:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Root Carbon (GBM)
+    units: kgC m-2
+    standard_name: root_carbon_content
+
+fast_wood_prod:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Fast Turnover Wood Product
+    units: kgC m-2
+
+med_wood_prod:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Medium Turnover Wood Product
+    units: kgC m-2
+
+slow_wood_prod:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Slow Turnover Wood Product
+    units: kgC m-2
+
+landuse_co2_flux:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: CO2 Flux to Atmopshere from Landuse Change
+    units: kgC m-2 yr-1
+
+harvest_carbon:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Harvested Litter Carbon
+    units: kgC m-2 yr-1
+
+landuse_carb_soil:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Root Carbon Transfered to Soil from Landuse Change
+    units: kgC m-2 yr-1
+
+soil_resp_flux:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Soil Respiration Flux to Atmosphere
+    units: kgC m-2 yr-1
+
+dpm_ratio:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Fraction of litter flux that is added to the DPM soil pool
+    units: 0-1
+
+npp_nlimit_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Net Primary Productivity on PFTs post N-Limit
+    units: kgC m-2 yr-1
+
+npp_nlimit:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: GBM Net Primary Productivity post N-Limit
+    units: kgC m-2 yr-1
+
+exudates_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Exudates on PFTs
+    units: kgC m-2 yr-1
+
+exudates:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Gridbox Mean Exudates
+    units: kgC m-2 yr-1
+
+nit_dep:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Atmopsheric Nitrogen Deposition
+    units: kgN m-2 yr-1
+
+n_bnf_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Nitrogen Fixation by Plants (BNF) into Inorganic Pool
+    units: kgN m-2 yr-1
+
+n_bnf:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Gridbox Mean Nitrogen Fixation (BNF) into Inorganic Pool
+    units: kgN m-2 yr-1
+
+n_leach:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Loss of Inorganic Nitrogen via leaching
+    units: kgN m-2 yr-1
+
+n_min_gas:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Loss of Mineralised Nitrogen via gaseous emission
+    units: kgN m-2 yr-1
+
+n_inor_gas:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Loss of Inorganic Nitrogen via gaseous emission
+    units: kgN m-2 yr-1
+
+lit_n_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Nitrogen Litter Flux to the Soil on PFTs
+    units: kgN m-2 yr-1
+
+lit_n:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Girdbox Mean Nitrogen Litter Flux to the Soil
+    units: kgN m-2 yr-1
+
+fert_n_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Nitrogen Fertiliser on PFTs
+    units: kgN m-2 yr-1
+
+fert_n:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Girdbox Mean Nitrogen Fertiliser
+    units: kgN m-2 yr-1
+
+wood_nitrogen_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Nitrogen in Plant Stem/Wood Pool
+    units: kgN m-2
+
+leaf_nitrogen_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Nitrogen in Plant Leaf Pool (Labile + Allocated)
+    units: kgN m-2
+
+root_nitrogen_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Nitrogen in Plant Root Pool
+    units: kgN m-2
+
+lab_leaf_nitrogen_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Nitrogen in Plant Leaf Labile Pool
+    units: kgN m-2
+
+all_leaf_nitrogen_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Nitrogen in Plant Leaf Allocated Pool (actual LAI component)
+    units: kgN m-2
+
+veg_nitrogen_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Vegetation Nitrogen on PFTs
+    units: kgN m-2
+
+veg_nitrogen:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Vegetation Nitrogen
+    units: kgN m-2
+
+dpm_npool:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: DPM Soil Nitrogen Pool
+    units: kgN m-2
+
+rpm_npool:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: RPM Soil Nitrogen Pool
+    units: kgN m-2
+
+bio_npool:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: BIO Soil Nitrogen Pool
+    units: kgN m-2
+
+hum_npool:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: HUM Soil Nitrogen Pool
+    units: kgN m-2
+
+total_npool:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Soil Nitrogen Content
+    units: kgN m-2
+
+inor_npool:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Inorganic Soil Nitrogen Pool
+    units: kgN m-2
+
+n_dem_grow_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Nitrogen Demand for Growth on PFTs
+    units: kgN m-2 yr-1
+
+n_dem_spread_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Nitrogen Demand for Spreading on PFTs
+    units: kgN m-2 yr-1
+
+n_dem_tot_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Total Nitrogen Demand on PFTs
+    units: kgN m-2 yr-1
+
+n_dem_tot:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total (GBM) Nitrogen Demand
+    units: kgN m-2 yr-1
+
+n_up_turn_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Nitrogen Uptake to Sustain Plant on PFTs
+    units: kgN m-2 yr-1
+
+n_up_grow_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Nitrogen Uptake for Growth on PFTs
+    units: kgN m-2 yr-1
+
+n_up_spread_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Nitrogen Uptake for Spreading on PFTs
+    units: kgN m-2 yr-1
+
+n_up_tot_pft:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Total Nitrogen Uptake on PFTs
+    units: kgN m-2 yr-1
+
+n_up_tot:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Gridbox Mean Total Nitrogen Uptake by Plants
+    units: kgN m-2 yr-1
+
+fn_gb:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Soil Nitrogen Decomposition Rate Modifier (Fn)
+    units: 0-1
+
+dpm_n_imm:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: DPM Nitrogen Immobilisation Flux into Soil
+    units: kgN m-2 yr-1
+
+rpm_n_imm:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: RPM Nitrogen Immobilisation Flux into Soil
+    units: kgN m-2 yr-1
+
+bio_n_imm:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: BIO Nitrogen Immobilisation Flux into Soil
+    units: kgN m-2 yr-1
+
+hum_n_imm:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: HUM Nitrogen Immobilisation Flux into Soil
+    units: kgN m-2 yr-1
+
+n_imm_tot:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total Nitrogen Immobilisation Flux into Soil
+    units: kgN m-2 yr-1
+
+dpm_n_min:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: DPM Nitrogen Mineralisation Flux from Soil
+    units: kgN m-2 yr-1
+
+rpm_n_min:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: RPM Nitrogen Mineralisation Flux from Soil
+    units: kgN m-2 yr-1
+
+bio_n_min:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: BIO Nitrogen Mineralisation Flux from Soil
+    units: kgN m-2 yr-1
+
+hum_n_min:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: HUM Nitrogen Mineralisation Flux from Soil
+    units: kgN m-2 yr-1
+
+n_min_tot:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total Nitrogen Mineralisation Flux from Soil
+    units: kgN m-2 yr-1
+
+gpp_triffid:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Gridbox Mean GPP from TRIFFID
+    units: kgC m-2 yr-1
+
+river_water:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total River Water Storage
+    units: kg
+
+outflow:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Gridbox Outflow
+    units: kg s-1
+
+inflow:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Gridbox Inflow
+    units: kg s-1
+
+river_outflow:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: River Outflow on Atmos Grid
+    units: kg m-2 s-1
+
+inland_basin_trip:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Inland Basin Flow on Trip Grid
+    units: kg s-1
+
+u_wind:
+  dims: [time, p_levs, lat_p, lon_p]
+  attrs:
+    long_name: U Component of Wind on P Lev/UV Grid
+    standard_name: eastward_wind
+    units: m s-1
+
+v_wind:
+  dims: [time, p_levs, lat_p, lon_p]
+  attrs:
+    long_name: V Component of Wind on P Lev/UV Grid
+    standard_name: northward_wind
+    units: m s-1
+
+w_wind:
+  dims: [time, p_levs, lat_p, lon_p]
+  attrs:
+    long_name: W Component of Wind on P Lev/UV Grid
+    standard_name: upward_air_velocity
+    units: m s-1
+
+t_plev:
+  dims: [time, p_levs, lat_p, lon_p]
+  attrs:
+    long_name: Temperature on P Lev/UV Grid
+    standard_name: air_temperature
+    units: K
+  convert: temp
+
+q_plev:
+  dims: [time, p_levs, lat_p, lon_p]
+  attrs:
+    long_name: Specific Humidity on P Lev/UV Grid
+    standard_name: specific_humidity
+    units: kg/kg
+
+rh_plev:
+  dims: [time, p_levs, lat_p, lon_p]
+  attrs:
+    long_name: Relative Humidity on P Lev/UV Grid
+    standard_name: relative_humidity
+    units: "%"
+
+geo_height:
+  dims: [time, p_levs, lat_p, lon_p]
+  attrs:
+    long_name: Geopotential Height on P Lev/UV Grid
+    standard_name: geopotential_height
+    units: m
+
+omega_plev:
+  dims: [time, p_levs, lat_p, lon_p]
+  attrs:
+    long_name: Omega on P Lev/UV Grid
+    standard_name: lagrangian_tendency_of_air_pressure
+
+heav_func:
+  dims: [time, p_levs, lat_p, lon_p]
+  attrs:
+    long_name: Heaviside Function on P Lev/UV Grid
+
+col_dry_mass:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total Column Dry Mass
+    units: kg m-2
+
+col_wet_mass:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total Column Wet Mass
+    units: kg m-2
+
+col_qcl:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total Column QCL
+    units: kg m-2
+    standard_name: atmosphere_cloud_liquid_water_content
+
+col_qcf:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total Column QCF
+    units: kg m-2
+    standard_name: atmosphere_cloud_ice_content
+
+col_energy_corr_p:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: ENERGY CORR P GRID IN COLUMN W/M2
+    units: W m-2
+
+dry_col_uq:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dry Mass Column Integrated UQ
+    units: kg m-2 s-1
+
+dry_col_vq:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dry Mass Column Integrated VQ
+    units: kg m-2 s-1
+
+dry_col_wq:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dry Mass Column Integrated WQ
+    units: kg m-2 s-1
+
+trop_press:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Pressure at Tropopause Level
+    units: Pa
+    standard_name: tropopause_air_pressure
+
+trop_height:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Height at Tropopause Level
+    units: m
+    standard_name: tropopause_altitude
+
+moist_flux_u:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total Eastward (U) Moisture Flux
+    units: kg m-2 s-1
+
+moist_flux_v:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total Northward (V) Moisture Flux
+    units: kg m-2 s-1
+
+atm_co2:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Atmospheric CO2 Burden (GtC)
+    units: GtC
+
+atm_co2_mass:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Atmospheric CO2 Burden (kgCO2)
+    units: kgCO2
+
+co2_conc:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Atmospheric CO2 Concentration
+    units: ppmv
+
+co2_mmr:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: CO2 Mass Mixing Ratio
+    units: kg kg-1
+
+o3_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: O3 MASS MIXING RATIO
+    units: kg kg-1
+
+no_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: NO MASS MIXING RATIO
+    units: kg kg-1
+
+no3_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: NO3 MASS MIXING RATIO
+    units: kg kg-1
+
+n2o5_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: N2O5 MASS MIXING RATIO
+    units: kg kg-1
+
+hono2_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: HONO2 MASS MIXING RATIO
+    units: kg kg-1
+
+h2o2_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: H2O2 MASS MIXING RATIO
+    units: kg kg-1
+
+ch4_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: CH4 MASS MIXING RATIO
+    units: kg kg-1
+
+co_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: CO MASS MIXING RATIO
+    units: kg kg-1
+
+hono_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: HONO MASS MIXING RATIO
+    units: kg kg-1
+
+c2h6_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: C2H6 MASS MIXING RATIO
+    units: kg kg-1
+
+cl_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Cl MASS MIXING RATIO
+    units: kg kg-1
+
+clo_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: ClO MASS MIXING RATIO
+    units: kg kg-1
+
+br_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Br MASS MIXING RATIO
+    units: kg kg-1
+
+brcl_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: BrCl MASS MIXING RATIO
+    units: kg kg-1
+
+brono2_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: BrONO2 MASS MIXING RATIO
+    units: kg kg-1
+
+n2o_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: N2O MASS MIXING RATIO
+    units: kg kg-1
+
+hocl_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: HOCl MASS MIXING RATIO
+    units: kg kg-1
+
+hbr_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: HBr MASS MIXING RATIO
+    units: kg kg-1
+
+hobr_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: HOBr MASS MIXING RATIO
+    units: kg kg-1
+
+clono2_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: ClONO2 MASS MIXING RATIO
+    units: kg kg-1
+
+cfcl13_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: CFCl13 MASS MIXING RATIO
+    units: kg kg-1
+
+cf2cl2_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: CF2Cl2 MASS MIXING RATIO
+    units: kg kg-1
+
+mebr_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: MeBr MASS MIXING RATIO
+    units: kg kg-1
+
+n_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: N MASS MIXING RATIO
+    units: kg kg-1
+
+o3p_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: O3P MASS MIXING RATIO
+    units: kg kg-1
+
+h2_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: H2 MASS MIXING RATIO
+    units: kg kg-1
+
+dms_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: DMS MASS MIXING RATIO
+    units: kg kg-1
+
+so2_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: SO2 MASS MIXING RATIO
+    units: kg kg-1
+
+h2so4_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: H2SO4 MASS MIXING RATIO
+    units: kg kg-1
+
+dmso_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: DMSO MASS MIXING RATIO
+    units: kg kg-1
+
+nh3_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: NH3 MASS MIXING RATIO
+    units: kg kg-1
+
+cs2_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: CS2 MASS MIXING RATIO
+    units: kg kg-1
+
+cos_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: COS MASS MIXING RATIO
+    units: kg kg-1
+
+h2s_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: H2S MASS MIXING RATIO
+    units: kg kg-1
+
+h_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: H MASS MIXING RATIO
+    units: kg kg-1
+
+lump_n_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: LUMPED N (as NO2) MMR
+    units: kg kg-1
+
+lump_br_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: LUMPED Br (as BrO) MMR
+    units: kg kg-1
+
+lump_cl_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: LUMPED Cl (as HCl) MMR
+    units: kg kg-1
+
+pass_o3_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: PASSIVE O3 MASS MIXING RATIO
+    units: kg kg-1
+
+age_air:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Age of Air
+    units: s
+
+aero_surf_dens:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Aerosol surface area dens (cm2/cm2)
+    units: cm2 cm-2
+
+hcl_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: HCl MASS MIXING RATIO
+    units: kg kg-1
+
+bro_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: BrO MASS MIXING RATIO
+    units: kg kg-1
+
+no2_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: NO2 MASS MIXING RATIO
+    units: kg kg-1
+
+o1d_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: O(1D) MASS MIXING RATIO
+    units: kg kg-1
+
+h2o_mmr:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: H2O mass mixing ratio (kg/kg)
+    units: kg kg-1
+
+ste_o3:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: "STE: O3"
+    units: ""
+
+air_mass_trop:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Air Mass (Troposphere)
+    units: kg
+
+trop_mask:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: TROPOSPHERIC MASK
+
+air_mass_atm:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: Air Mass (Whole Atmopshere)
+    units: kg
+
+so2_dry_dep:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: SO2 DRY DEPOSITION (3D)
+    units: kg m-2 s-1
+
+so2_wet_dep:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: SO2 WET DEPOSITION (3D)
+    units: kg m-2 s-1
+
+no_emis:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: NO surface emisions
+    units: kg m-2 s-1
+
+ch4_emis:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: CH4 surface emisions
+    units: kg m-2 s-1
+
+co_emis:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: CO surface emisions
+    units: kg m-2 s-1
+
+hcho_emis:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: HCHO surface emisions
+    units: kg m-2 s-1
+
+c2h6_emis:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: C2H6 surface emisions
+    units: kg m-2 s-1
+
+c3h8_emis:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: C3H8 surface emisions
+    units: kg m-2 s-1
+
+me2co_emis:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Me2CO surface emisions
+    units: kg m-2 s-1
+
+mecho_emis:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: MeCHO surface emisions
+    units: kg m-2 s-1
+
+no_emis_aircraft:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: NO emissions from aircraft
+    units: kg m-2 s-1
+
+meoh_emis:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: MeOH surface emisions
+    units: kg m-2 s-1
+
+dms_emis:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: DMS surface emisions
+    units: kg m-2 s-1
+
+so2_emis:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: SO2 surface emisions
+    units: kg m-2 s-1
+
+so2_high_emis:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: SO2 high level emissions
+    units: kg m-2 s-1
+
+so2_nat_emis:
+  dims: [time, theta_lev, latitude, longitude]
+  attrs:
+    long_name: SO2 natural emissions
+    units: kg m-2 s-1
