@@ -41,7 +41,7 @@ while IFS= read -r -d '' file; do
     echo "Deleted: $file"
   fi
   count=$((count + 1))
-done < <(find "$RUN_DIR" -mindepth 2 -type f -print0)
+done < <(find "$RUN_DIR" -mindepth 2 -type f ! -name ".gitkeep" -print0)
 
 if [ "$DRY_RUN" -eq 1 ]; then
   echo "Dry-run complete. Files that would be deleted: $count"
