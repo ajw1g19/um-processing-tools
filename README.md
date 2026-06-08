@@ -72,11 +72,11 @@ Inputs:
 Generated files:
 
 - Extraction config YAML:
-  - STASH*extract/run/stash_extract/<suite>\*<package>*<start>\_<end>.yaml
+  - STASH_extract/run/stash_extract/<suite>\_<package>\_<start>\_<end>.yaml
 - Sbatch script:
-  - STASH*extract/run/sbatch_scripts/<suite>\*<package>*<start>\_<end>.sbatch
+  - STASH\*extract/run/sbatch_scripts/<suite>\_<package>\_<start>\_<end>.sbatch
 - Log file:
-  - STASH_extract/run/logs/<suite>\*<package>\_<start>-<end>.out
+  - STASH_extract/run/logs/<suite>\_<package>\_<start>-<end>.out
 
 Worker used:
 
@@ -84,7 +84,7 @@ Worker used:
 
 Output data location:
 
-- Processed_Output/<suite>/<varname>\*<start>01-<end-1>12.nc
+- Processed_Output/<suite>/<varname>\_<start>01-<end-1>12.nc
 
 ## Workflow: extract_climate.py
 
@@ -102,11 +102,11 @@ Default package set:
 Generated files (one per package):
 
 - Extraction config YAML:
-  - STASH*extract/run/stash_extract/<suite>\*<package>*<start>\_<end>.yaml
+  - STASH_extract/run/stash_extract/<suite>\_<package>\_<start>\_<end>.yaml
 - Sbatch script:
-  - STASH*extract/run/sbatch_scripts/<suite>\*<package>*<start>\_<end>.sbatch
+  - STASH_extract/run/sbatch_scripts/<suite>\_<package>\_<start>\_<end>.sbatch
 - Log file:
-  - STASH_extract/run/logs/<suite>\*<package>\_<start>-<end>.out
+  - STASH_extract/run/logs/<suite>\_<package>\_<start>-<end>.out
 
 Worker used:
 
@@ -114,7 +114,7 @@ Worker used:
 
 Output data location:
 
-- Processed_Output/<suite>/<varname>\*<start>01-<end-1>12.nc
+- Processed_Output/<suite>/<varname>\_<start>01-<end-1>12.nc
 
 ## Workflow: stash_mon_mn.py
 
@@ -134,11 +134,11 @@ Inputs:
 Generated files:
 
 - Monthly config YAML:
-  - STASH_extract/run/monthly_mean/<suite>\_mon_mn\*<start>-<end>.yaml
+  - STASH_extract/run/monthly_mean/<suite>\_mon_mn\_<start>-<end>.yaml
 - Sbatch script:
-  - STASH_extract/run/sbatch_scripts/<suite>\_mon_mn\*<start>-<end>.sbatch
+  - STASH_extract/run/sbatch_scripts/<suite>\_mon_mn\_<start>-<end>.sbatch
 - Log file:
-  - STASH_extract/run/logs/<suite>\_mon_mn\*<start>-<end>.out
+  - STASH_extract/run/logs/<suite>\_mon_mn\_<start>-<end>.out
 
 Worker used:
 
@@ -146,7 +146,7 @@ Worker used:
 
 Output data location:
 
-- Monthly_Means_Files/<suite>\_monthly_means\*<start>01-<end-1>12.nc
+- Monthly_Means_Files/<suite>\_monthly_means\_<start>01-<end-1>12.nc
 
 Notes:
 
