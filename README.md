@@ -2,8 +2,10 @@
 
 Programs for extraction and processing of Unified Model output
 
-This directory contains three related workflows:
+This directory contains five workflows:
 
+- Confirming file transfer from ARCHER2 and PP readability checks.
+- Sorting model output files into expected cycle directories.
 - STASH extraction for one package or custom request list.
 - Bulk climate extraction (multiple predefined packages in one run).
 - Monthly-mean processing from extracted NetCDF files.
@@ -13,6 +15,9 @@ This directory contains three related workflows:
 ### config/
 
 - packages.yaml: Named STASH packages and version-dependent rules.
+- pp_check_config.yaml: Globus endpoint and archive-path settings for PP transfer checks.
+- pp_check_state.json: Last-seen per-suite .pp mtime state used to detect newly transferred files.
+- pp_check_sbatch_template.sh: sbatch template used for PP readability check jobs.
 - um_stash_vn.yaml: Suite-to-STASH-version mapping.
 - stash.xlsx: STASH lookup tables, one sheet per version (for example stash_v1, stash_v2.1, stash_v5).
 - um_varnames.yaml: UM variable name mapping used in metadata handling.
@@ -23,38 +28,61 @@ This directory contains three related workflows:
 
 - stash_extract/: YAML configs for extraction jobs.
 - monthly_mean/: YAML configs for monthly-mean jobs.
+- pp_check/: temporary PP readability-check outputs.
 - sbatch_scripts/: sbatch scripts for all workflows.
 - logs/: log files for all workflows.
 
-Use tidy_run.sh to clean subdirectories inside run/
+Use tidy_files.sh to clean subdirectories inside run/
 
-## How STASH Version Resolution Works
+## Workflow: submit_pp_checks.py
 
-STASH requests are resolved in two steps:
+Submits PP readability-check jobs only for suites with newly arrived .pp files,
+then updates suite state when jobs are submitted.
 
-1. um_stash_vn.yaml selects which STASH version applies to the suite and requested years.
-2. That version is used to select the corresponding sheet in stash.xlsx (sheet name stash_v{version}).
+Run:
 
-### Single-version format
+python STASH_extract/submit_pp_checks.py
 
-If a suite always uses one version:
+Inputs:
 
-```yaml
-u-dt829: 5
-```
+- submit confirmation (y/n) after planned jobs are listed
 
-### Multi-version format
+Generated files:
 
-If a suite changes version over time, use year-keyed entries:
+- Sbatch scripts (one per suite with new files):
+  - STASH_extract/run/sbatch_scripts/{suite}\_pp_check.sbatch
+- Log files:
+  - STASH_extract/run/logs/{suite}\_pp_check.{slurm_job_id}.out
 
-```yaml
-u-example:
-  "1850": 4
-  "1900": 5
-```
+Updated files:
 
-This means 1850-1899 uses version 4 and 1900 onward uses version 5.
-Requested periods must stay within one interval; a request that spans intervals is rejected.
+- State file:
+  - STASH_extract/config/pp_check_state.json
+
+Worker used:
+
+- STASH_extract/check_pp_readable.py
+
+## Workflow: sort_model_output.py
+
+Interactive cleanup of Model_Output suite directories before extraction.
+This workflow renames p1 files to pm, moves misplaced pp files into the expected
+cycle folder, moves restart dumps to a dedicated restart_dumps directory, and
+deletes checksum files.
+
+Run:
+
+python STASH_extract/sort_model_output.py
+
+Inputs:
+
+- suite
+- start year and end year (end exclusive)
+
+Output updates:
+
+- In-place file moves/renames under Model_Output/{suite}/
+- Restart dumps moved to Model_Output/{suite}/restart_dumps/
 
 ## Workflow: stash_extraction.py
 
@@ -87,6 +115,34 @@ Worker used:
 Output data location:
 
 - Processed_Output/{suite}/{varname}\_{start}01-{end-1}12.nc
+
+### How STASH Version Resolution Works
+
+STASH requests are resolved in two steps:
+
+1. um_stash_vn.yaml selects which STASH version applies to the suite and requested years.
+2. That version is used to select the corresponding sheet in stash.xlsx (sheet name stash_v{version}).
+
+#### Single-version format
+
+If a suite always uses one version:
+
+```yaml
+u-dt829: 5
+```
+
+#### Multi-version format
+
+If a suite changes version over time, use year-keyed entries:
+
+```yaml
+u-example:
+  "1850": 4
+  "1900": 5
+```
+
+This means 1850-1899 uses version 4 and 1900 onward uses version 5.
+Requested periods must stay within one interval; a request that spans intervals is rejected.
 
 ## Workflow: extract_climate.py
 

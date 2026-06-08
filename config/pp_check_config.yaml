@@ -1,0 +1,4 @@
+globus:
+  archer2_endpoint: "3e90d018-0d05-461a-bbaf-aab605283d21"
+  jasmin_endpoint: "a2f53b7f-1b4e-4dce-9b7c-349ae760fee0"
+  archer2_archive_base: "/work/n02/n02/ajw1g19/archive"
