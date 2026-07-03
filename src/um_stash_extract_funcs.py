@@ -26,6 +26,17 @@ def workspace_dir():
     return os.path.dirname(_root_dir())
 
 
+def suite_prefix(suite):
+    # Derive the UM run-id prefix used in output (.pp) filenames from the suite name.
+    # Mirrors cylc's `$CYLC_WORKFLOW_NAME | cut -d - -f 2 | cut -c 1-5`, so suites
+    # need not conform to the generic u-* pattern.
+    # Used by sort_model_output.py and um_extract_sbatch.py.
+    parts = suite.split("-")
+    # cut -d - -f 2: second field if a delimiter is present, else the whole name.
+    field = parts[1] if len(parts) > 1 else suite
+    return field[:5]
+
+
 def _config_dir():
     # Resolve STASH_Processing config directory; used by YAML and template readers.
     return os.path.join(_root_dir(), "config")

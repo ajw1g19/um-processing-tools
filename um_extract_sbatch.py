@@ -60,6 +60,7 @@ def generate_files(suite, year, fids):
     # Build expected PP file paths for a suite/year; used by extract_year.
     file_list = []
     base_dir = os.path.join(WORKSPACE_DIR, "Model_Output", suite)
+    prefix = umstash.suite_prefix(suite)
 
     for fid in fids:
         file_list.extend(
@@ -67,7 +68,7 @@ def generate_files(suite, year, fids):
                 os.path.join(
                     base_dir,
                     f"{year}0101T0000Z",
-                    f"{suite[-5:]}a.{fid}{year}{month:02d}01.pp",
+                    f"{prefix}a.{fid}{year}{month:02d}01.pp",
                 )
                 for month in np.arange(1, 4)
             ]
@@ -77,7 +78,7 @@ def generate_files(suite, year, fids):
                 os.path.join(
                     base_dir,
                     f"{year}0401T0000Z",
-                    f"{suite[-5:]}a.{fid}{year}{month:02d}01.pp",
+                    f"{prefix}a.{fid}{year}{month:02d}01.pp",
                 )
                 for month in np.arange(4, 7)
             ]
@@ -87,7 +88,7 @@ def generate_files(suite, year, fids):
                 os.path.join(
                     base_dir,
                     f"{year}0701T0000Z",
-                    f"{suite[-5:]}a.{fid}{year}{month:02d}01.pp",
+                    f"{prefix}a.{fid}{year}{month:02d}01.pp",
                 )
                 for month in np.arange(7, 10)
             ]
@@ -97,7 +98,7 @@ def generate_files(suite, year, fids):
                 os.path.join(
                     base_dir,
                     f"{year}1001T0000Z",
-                    f"{suite[-5:]}a.{fid}{year}{month:02d}01.pp",
+                    f"{prefix}a.{fid}{year}{month:02d}01.pp",
                 )
                 for month in np.arange(10, 13)
             ]

@@ -21,7 +21,7 @@ def get_output_dirs(suite_path, cycles):
 
 def expected_files_for_cycle(cycle_dir, suite, fids):
     # Build list of expected pp filenames for a given cycle directory and set of file IDs.
-    suite_code = suite.split("-")[-1][:5]
+    suite_code = umstash.suite_prefix(suite)
     file_list = []
     match cycle_dir[4:6]:
         case "01": mon_codes = np.arange(1, 4)
