@@ -57,3 +57,7 @@ u-dy336: 6
 u-ea080: 6
 
 mhgs_jules_forcing: 7
+pi_jules_forcing: 7
+
+mh_mhveg: 8
+mh_pi_veg: 8
