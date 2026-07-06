@@ -1,8 +1,10 @@
+# First STASH version for MH_prod and PI_prod runs
 u-dd727: 1
 u-dh140: 1
 u-df326: 1
 u-dj021: 1
 
+# Entrainment and convection mass-flux diags moved to new file (.pc)
 u-dj114: 2.1
 u-dj324: 2.1
 u-dj628: 2.1
@@ -18,15 +20,21 @@ u-dk306: 2.1
 u-dk471: 2.1
 u-dk633: 2.1
 
+# Precipitation rate diagnostics moved to .pc
+# Hourly-mean diags increased from 3-hr to 1-hr resolution
 u-dk802: 2.2
 u-dk803: 2.2
 u-dl162: 2.2
 
+# Large volume of UKCA diags for MMRs and aerosols removed
+# TRIFFID diags for nitrogen cycle and veg carbon added
+# Pressure level diags in .ph switched to 28-level monthly output
 u-dp788: 3
 u-dq291: 3
 u-dq292: 3
 u-dq816: 3
 
+# Added solar zenith angle/daylight fraction and SW flux on levels+bands
 u-dr180: 4
 u-dr181: 4
 u-dr524: 4
@@ -42,11 +50,13 @@ u-dt913: 4
 u-dt914: 4
 u-du345: 4
 
+# Non-veg land surface diagnostics moved from .pt to .pv
 u-dt829: 5
 u-dt831: 5
 u-dt832: 5
 u-dt833: 5
 
+# Complete set of nitrogen cycle diags added to .pt
 u-ds899: 6
 u-dt221: 6
 u-dx242: 6
@@ -56,8 +66,11 @@ u-dy335: 6
 u-dy336: 6
 u-ea080: 6
 
+# JULES forcing diags (daily outputs)
 mhgs_jules_forcing: 7
 pi_jules_forcing: 7
 
+# Removing TRIFFID diags from vn 6
+# Added
 mh_mhveg: 8
 mh_pi_veg: 8
