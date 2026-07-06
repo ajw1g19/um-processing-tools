@@ -13,7 +13,7 @@ LOG_DIR = os.path.join(ROOT_DIR, "run", "logs")
 
 def main():
     state = load_state(STATE_PATH)
-    suites = umstash.available_suites()
+    suites = umstash.available_suites(pattern="*")
 
     to_submit = []
     for suite in suites:
