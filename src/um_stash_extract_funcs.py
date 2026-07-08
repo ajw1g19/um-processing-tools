@@ -364,11 +364,9 @@ def monthly_output_file(suite, start_yr, end_yr):
     )
 
 
-def available_suites(pattern="u-*"):
+def available_suites(pattern="*"):
     # List available suite directories from workspace Model_Output; used by
     # stash_extraction.py, stash_mon_mn.py, extract_climate.py, and submit_pp_checks.py.
-    # pattern defaults to the generic u-* naming; pass "*" to include suites with
-    # non-generic names.
     search = os.path.join(workspace_dir(), "Model_Output", pattern)
     return [
         os.path.basename(path)
