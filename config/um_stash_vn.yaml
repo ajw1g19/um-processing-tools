@@ -73,4 +73,4 @@ pi_jules_forcing: 7
 # Removing TRIFFID diags from vn 6
 # Added
 mh_mhveg: 8
-mh_pi_veg: 8
+mh_piveg: 8
