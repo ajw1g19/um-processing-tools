@@ -65,6 +65,12 @@ u-dx244: 6
 u-dy335: 6
 u-dy336: 6
 u-ea080: 6
+plio-ssta1: 6
+plio-ssta2: 6
+plio-ssta3: 6
+plio-ssta4: 6
+plio-ssta5: 6
+plio-sstb1: 6
 
 # JULES forcing diags (daily outputs)
 mhgs_jules_forcing: 7
