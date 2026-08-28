@@ -186,5 +186,11 @@ packages:
         set: { OUTPUT_FILE: "pc", DOMAIN: "DALLTH" }
         apply_to_indices: [3]
 
-  plevs:
-    items: []
+  runoff:
+    items:
+      - { SECTION: "08", ITEM: "234", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "08", ITEM: "235", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+    rules:
+      - when: "stash_vn > 4"
+        set: { OUTPUT_FILE: "pv" }
+        apply_to: all

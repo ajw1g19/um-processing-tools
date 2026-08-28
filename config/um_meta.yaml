@@ -237,6 +237,13 @@ open_sea_net_ssw:
     units: W m-2
     standard_name: surface_net_downward_shortwave_flux
 
+cloud_area:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total Cloud Amount in LW Radiation
+    units: 0-1
+    standard_name: cloud_area_fraction
+
 toa_sw_in:
   dims: [time, latitude, longitude]
   attrs:
@@ -411,6 +418,13 @@ min_dust_abs_od:
   dims: [time, band, latitude, longitude]
   attrs:
     long_name: Mineral Dust Absorption Aerosol Optical Depth
+
+bl_depth:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Boundary Layer Depth after Boundar Layer Call
+    units: m
+    standard_name: atmosphere_boundary_layer_thickness
 
 ice_down_heat_flux:
   dims: [time, latitude, longitude]
@@ -667,11 +681,33 @@ can_water_tile:
     units: kg m-2
   tiles: 16
 
+can_cap_tile:
+  dims: [time, surface_tiles, latitude, longitude]
+  attrs:
+    long_name: Canopy Capacity on Tiles
+    units: kg m-2
+  tiles: 16
+
+z0v_tile:
+  dims: [time, surface_tiles, latitude, longitude]
+  attrs:
+    long_name: Roughness Length on Tiles
+    units: m
+  tiles: 16
+
 tas_tile:
   dims: [time, surface_tiles, latitude, longitude]
   attrs:
     long_name: 1.5 m Suface Temperature on Tiles
     units: K
+  convert: temp
+  tiles: 16
+
+q_tile:
+  dims: [time, surface_tiles, latitude, longitude]
+  attrs:
+    long_name: 1.5 m Specific Humidity on Tiles
+    units: kg kg-1
   convert: temp
   tiles: 16
 
@@ -686,6 +722,12 @@ sublim_tile:
   dims: [time, surface_tiles, latitude, longitude]
   attrs:
     long_name: Sumblimation Moisture Flux on Tiles
+    units: kg m-2 s-1
+
+pet_tile:
+  dims: [time, surface_tiles, latitude, longitude]
+  attrs:
+    long_name: Potential Evaporation on Tiles
     units: kg m-2 s-1
 
 shear_bl_ind:
@@ -870,6 +912,12 @@ dust_dry_dep2_div6:
   attrs:
     long_name: Dust dry dep flux from lev 2 div 6
     units: kg m-2 s-1
+
+stom_con:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Stomatal Conductance on PFTs
+    units: m s-1
 
 iso_emis_pft:
   dims: [time, PFTs, latitude, longitude]
@@ -1304,6 +1352,12 @@ sub_runoff:
     standard_name: subsurface_runoff_flux
     units: kg m-2 s-1
 
+dunne_runoff:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Dunne Runoff Rate
+    units: kg m-2 s-1
+
 wetland_ch4:
   dims: [time, latitude, longitude]
   attrs:
@@ -1396,6 +1450,12 @@ veg_carbon:
     units: kgC m-2
     standard_name: vegetation_carbon_content
 
+g_leaf:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Leaf Turnover Rate after Phenology on PFTs
+    units: kgC m-2 yr-1
+
 lit_c_pft:
   dims: [time, PFTs, latitude, longitude]
   attrs:
@@ -1408,10 +1468,16 @@ lit_c:
     long_name: Gridbox Mean Litter Carbon flux from PFTs to the Soil
     units: kgC m-2 yr-1
 
-leaf_turn_pft:
+g_leaf_phen:
   dims: [time, PFTs, latitude, longitude]
   attrs:
-    long_name: Leaf Turnover Rate on PFTs
+    long_name: Leaf Turnover Rate before Phenology on PFTs
+    units: kgC m-2 yr-1
+
+g_leaf_trif:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Accumulated Leaf Turnover Rate for TRIFFID on PFTs
     units: kgC m-2 yr-1
 
 npp_triffid:
@@ -1426,6 +1492,11 @@ soil_resp:
   attrs:
     long_name: Total Soil Respiration Rate for TRIFFID
     units: kgC m-2 yr-1
+
+dist_frac:
+  dims: [time, PFTs, latitude, longitude]
+  attrs:
+    long_name: Disturbed Fraction of Vegetation on PFTs
 
 total_cpool:
   dims: [time, latitude, longitude]
@@ -2014,6 +2085,11 @@ trop_height:
     long_name: Height at Tropopause Level
     units: m
     standard_name: tropopause_altitude
+
+tot_col_q:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Total Column Q (Water Vapour Path)
 
 moist_flux_u:
   dims: [time, latitude, longitude]

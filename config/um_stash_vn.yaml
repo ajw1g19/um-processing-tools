@@ -80,3 +80,12 @@ pi_jules_forcing: 7
 # Added
 mh_mhveg: 8
 mh_piveg: 8
+
+# Added new daily diags
+# Added other diags across model
+u-eb976: 9
+mhgs: 9
+mhgs_alph: 9
+mhgs_soil: 9
+mhgs_dalb: 9
+mhgs_dalb_ent: 9
