@@ -198,10 +198,22 @@ def _meta_um_daily(varname):
     # Resolve daily metadata set; used by um_extract_sbatch.py and um_mon_mn_sbatch.py.
     um_to_varname = {
         "UM_m01s00i024_vn1302": "ts_daily",
+        "UM_m01s00i024_vn1302": "moist_flux_daily",
         "UM_m01s03i236_vn1302": "tas_daily",
         "UM_m01s04i203_vn1302": "ls_rain_daily",
         "UM_m01s05i205_vn1302": "conv_rain_daily",
         "UM_m01s05i216_vn1302": "pr_daily",
+        "UM_m01s05i269_vn1302": "deep_ind_daily",
+        "UM_m01s05i270_vn1302": "shallow_ind_daily",
+        "UM_m01s05i272_vn1302": "midlev_ind_daily",
+        "UM_m01s05i277_vn1302": "deep_precip_daily",
+        "UM_m01s05i278_vn1302": "shallow_precip_daily",
+        "UM_m01s05i279_vn1302": "midlev_precip_daily",
+        "UM_m01s08i223_vn1302": "soil_moisture_daily",
+        "UM_m01s30i461_vn1302": "tot_col_q_daily",
+        "UM_m01s30i462_vn1302": "moist_flux_u_daily",
+        "UM_m01s30i463_vn1302": "moist_flux_v_daily",
+
     }
 
     meta_dict = {
@@ -213,6 +225,14 @@ def _meta_um_daily(varname):
                 "units": "K",
             },
             "convert": "temp",
+        },
+        "moist_flux_daily": {
+            "dims": ["time_daily", "latitude", "longitude"],
+            "attrs": {
+                "long_name": "Daily Total Surface Moisture Flux",
+                "standard_name": "surface_upward_water_flux",
+                "units": "kg m-2 s-1"
+            },
         },
         "tas_daily": {
             "dims": ["time_daily", "latitude", "longitude"],
@@ -250,6 +270,76 @@ def _meta_um_daily(varname):
                 "units": "kg m-2 s-1",
             },
             "convert": "precip",
+        },
+        "deep_ind_daily": {
+            "dims": ["time_daily", "latitude", "longitude"],
+            "attrs": {
+                "long_name": "Daily Deep Convection Indicator",
+            },
+        },
+        "shallow_ind_daily": {
+            "dims": ["time_daily", "latitude", "longitude"],
+            "attrs": {
+                "long_name": "Daily Shallow Convection Indicator",
+            },
+        },
+        "midlev_ind_daily": {
+            "dims": ["time_daily", "latitude", "longitude"],
+            "attrs": {
+                "long_name": "Daily Mid-Level Convection Indicator",
+            },
+        },
+        "deep_precip_daily": {
+            "dims": ["time_daily", "latitude", "longitude"],
+            "attrs": {
+                "long_name": "Daily Deep Convective Precipitation",
+                "units": "kg m-2 s-1"
+            },
+            "convert": "precip"
+        },
+        "shallow_precip_daily": {
+            "dims": ["time_daily", "latitude", "longitude"],
+            "attrs": {
+                "long_name": "Daily Shallow Convective Precipitation",
+                "units": "kg m-2 s-1"
+            },
+            "convert": "precip"
+        },
+        "midlev_precip_daily": {
+            "dims": ["time_daily", "latitude", "longitude"],
+            "attrs": {
+                "long_name": "Daily Mid-Level Convective Precipitation",
+                "units": "kg m-2 s-1"
+            },
+            "convert": "precip"
+        },
+        "soil_moisture_daily": {
+            "dims": ["time_daily", "depth", "latitude", "longitude"],
+            "attrs": {
+                "long_name": "Daily Soil Moisture Content in a Layer (Frozen + Unfrozen)",
+                "standard_name": "moisture_content_of_soil_layer",
+                "units": "kg m-2"
+            },
+        },
+        "tot_col_q_daily": {
+            "dims": ["time_daily", "latitude", "longitude"],
+            "attrs": {
+                "long_name": "Daily Total Column Q (Water Vapour Path)",
+            },
+        },
+        "moist_flux_u_daily": {
+            "dims": ["time_daily", "latitude", "longitude"],
+            "attrs": {
+                "long_name": "Daily Total Eastward (U) Moisture Flux",
+                "units": "kg m-2 s-1"
+            },
+        },
+        "moist_flux_v_daily": {
+            "dims": ["time_daily", "latitude", "longitude"],
+            "attrs": {
+                "long_name": "Daily Total Northward (V) Moisture Flux",
+                "units": "kg m-2 s-1"
+            },
         },
     }
 
