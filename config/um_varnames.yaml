@@ -1,5 +1,5 @@
-UM_m01s00i002_vn1302: u_wind_rho
-UM_m01s00i003_vn1302: v_wind_rho
+UM_m01s00i002_vn1302_true_latitude_longitude: u_wind_rho
+UM_m01s00i003_vn1302_true_latitude_longitude: v_wind_rho
 UM_m01s00i004_vn1302: theta
 UM_m01s00i010_vn1302: q
 UM_m01s00i012_vn1302: qcf

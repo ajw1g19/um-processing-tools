@@ -194,3 +194,32 @@ packages:
       - when: "stash_vn > 4"
         set: { OUTPUT_FILE: "pv" }
         apply_to: all
+
+  mbudget-diag:
+    items:
+      - { SECTION: "03", ITEM: "223", OUTPUT_FILE: "pm", DOMAIN: "DIAG" }
+      - { SECTION: "05", ITEM: "216", OUTPUT_FILE: "pm", DOMAIN: "DIAG" }
+      - { SECTION: "00", ITEM: "033", OUTPUT_FILE: "pm", DOMAIN: "DIAG" }
+      - { SECTION: "00", ITEM: "409", OUTPUT_FILE: "pm", DOMAIN: "DIAG" }
+      - { SECTION: "30", ITEM: "428", OUTPUT_FILE: "pm", DOMAIN: "DIAG" }
+      - { SECTION: "30", ITEM: "429", OUTPUT_FILE: "pm", DOMAIN: "DIAG" }
+    append:
+      - when: "stash_vn > 8"
+        items:
+          - { SECTION: "30", ITEM: "461", OUTPUT_FILE: "pm", DOMAIN: "DIAG" }
+
+  mbudget-dp:
+    items:
+      - { SECTION: "30", ITEM: "201", OUTPUT_FILE: "ph", DOMAIN: "DP28" }
+      - { SECTION: "30", ITEM: "202", OUTPUT_FILE: "ph", DOMAIN: "DP28" }
+      - { SECTION: "30", ITEM: "205", OUTPUT_FILE: "ph", DOMAIN: "DP28" }
+      - { SECTION: "30", ITEM: "301", OUTPUT_FILE: "ph", DOMAIN: "DP28" }
+
+  mbudget-dlevs:
+    items:
+      - { SECTION: "00", ITEM: "002", OUTPUT_FILE: "pm", DOMAIN: "DALLRH" }
+      - { SECTION: "00", ITEM: "003", OUTPUT_FILE: "pm", DOMAIN: "DALLRH" }
+      - { SECTION: "00", ITEM: "010", OUTPUT_FILE: "pm", DOMAIN: "DALLTH" }
+      - { SECTION: "00", ITEM: "012", OUTPUT_FILE: "pm", DOMAIN: "DALLTH" }
+      - { SECTION: "00", ITEM: "254", OUTPUT_FILE: "pm", DOMAIN: "DALLTH" }
+      - { SECTION: "00", ITEM: "408", OUTPUT_FILE: "pm", DOMAIN: "DALLTH" }
