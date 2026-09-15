@@ -154,6 +154,8 @@ def extract_year(year):
         elif levels > 1:
             selected_field = selected_field[:, :levels]
 
+        selected_field.nc_set_variable(um_var_names[i])
+
         nc_fname = f"{suite_dir}{year}_{file_suffix(package_name, code)}.nc"
         cf.write(selected_field, nc_fname)
         ncfiles.append(nc_fname)
@@ -184,6 +186,10 @@ stash_codes = np.array([
     sec + itm.zfill(3) if sec != "0" else itm
     for sec, itm in zip(sections, items)
 ])
+um_var_names = [
+    f"UM_m01s{sec.zfill(2)}i{itm.zfill(3)}_vn1302"
+    for sec, itm in zip(sections, items)
+]
 stash_levels = np.array(stash_extract["LEVELS"].astype(int))
 domain_profiles = np.array(stash_extract["DOMAIN"])
 time_profiles = np.array(stash_extract["TIME"])
@@ -241,9 +247,9 @@ print(" ", flush=True)
 
 for i, code in enumerate(stash_codes):
     files_to_combine = [
-        f for f in all_files if f.endswith(f"{file_suffix(package_name, code)}.nc")
+        f for f in all_files if f.endswith(f"_{file_suffix(package_name, code)}.nc")
     ]
-    var = f"UM_m01s{sections[i].zfill(2)}i{items[i].zfill(3)}_vn1302"
+    var = um_var_names[i]
 
     print(f"Processing item {code}: {var}", flush=True)
     print(" ", flush=True)
