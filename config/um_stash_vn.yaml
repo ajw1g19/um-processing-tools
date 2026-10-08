@@ -88,6 +88,8 @@ mhgs_alph: 9
 mhgs_soil: 9
 mhgs_dalb: 9
 mhgs_dalb_ent: 9
+mhgs_dyn_nlim: 9
+mhgs_dyn_no_nlim: 9
 pi_prod: 9
 mh_prod: 9
 
