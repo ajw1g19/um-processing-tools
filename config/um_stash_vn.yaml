@@ -88,3 +88,8 @@ mhgs_alph: 9
 mhgs_soil: 9
 mhgs_dalb: 9
 mhgs_dalb_ent: 9
+pi_prod: 9
+mh_prod: 9
+
+# vn 9 with JULES forcing diags
+mhgs_dalb_ent_jls: 10
