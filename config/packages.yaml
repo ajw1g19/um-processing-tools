@@ -223,3 +223,46 @@ packages:
       - { SECTION: "00", ITEM: "012", OUTPUT_FILE: "pm", DOMAIN: "DALLTH" }
       - { SECTION: "00", ITEM: "254", OUTPUT_FILE: "pm", DOMAIN: "DALLTH" }
       - { SECTION: "00", ITEM: "408", OUTPUT_FILE: "pm", DOMAIN: "DALLTH" }
+
+  soilcn-model-diag:
+    items:
+      - { SECTION: "19", ITEM: "111", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "114", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "160", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "113", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "116", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "181", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "171", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "115", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "177", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "178", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "179", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "180", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "167", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "168", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "169", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "170", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "017", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "018", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "019", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "020", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "005", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "054", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "124", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "102", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+      - { SECTION: "19", ITEM: "161", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }
+
+  soilcn-model-levs:
+    items:
+      - { SECTION: "19", ITEM: "004", OUTPUT_FILE: "pt", DOMAIN: "DPFTS" }
+      - { SECTION: "19", ITEM: "123", OUTPUT_FILE: "pt", DOMAIN: "DPFTS" }
+      - { SECTION: "19", ITEM: "101", OUTPUT_FILE: "pt", DOMAIN: "DPFTS" }
+      - { SECTION: "19", ITEM: "103", OUTPUT_FILE: "pt", DOMAIN: "DPFTS" }
+      - { SECTION: "19", ITEM: "152", OUTPUT_FILE: "pt", DOMAIN: "DPFTS" }
+      - { SECTION: "19", ITEM: "153", OUTPUT_FILE: "pt", DOMAIN: "DPFTS" }
+      - { SECTION: "19", ITEM: "156", OUTPUT_FILE: "pt", DOMAIN: "DPFTS" }
+      - { SECTION: "19", ITEM: "157", OUTPUT_FILE: "pt", DOMAIN: "DPFTS" }
+      - { SECTION: "19", ITEM: "158", OUTPUT_FILE: "pt", DOMAIN: "DPFTS" }
+      - { SECTION: "19", ITEM: "159", OUTPUT_FILE: "pt", DOMAIN: "DPFTS" }
+      - { SECTION: "19", ITEM: "154", OUTPUT_FILE: "pt", DOMAIN: "DPFTS" }
+      - { SECTION: "19", ITEM: "008", OUTPUT_FILE: "pt", DOMAIN: "DPFTS" }
