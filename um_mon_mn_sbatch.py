@@ -61,7 +61,7 @@ for file_to_mean in files_to_process:
     print(" ", flush=True)
     print(f"Variable: {varname}", flush=True)
 
-    _, coords, xda = um.importUMData(file_to_mean)  # type: ignore
+    xda, coords = um.importUMData(file_to_mean, coords=True)  # type: ignore
     if not isinstance(xda, xr.DataArray):
         raise TypeError(
             f"{file_to_mean} did not return a DataArray, got type {type(xda)} instead"

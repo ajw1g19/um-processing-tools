@@ -198,7 +198,7 @@ def _meta_um_daily(varname):
     # Resolve daily metadata set; used by um_extract_sbatch.py and um_mon_mn_sbatch.py.
     um_to_varname = {
         "UM_m01s00i024_vn1302": "ts_daily",
-        "UM_m01s00i024_vn1302": "moist_flux_daily",
+        "UM_m01s03i223_vn1302": "moist_flux_daily",
         "UM_m01s03i236_vn1302": "tas_daily",
         "UM_m01s04i203_vn1302": "ls_rain_daily",
         "UM_m01s05i205_vn1302": "conv_rain_daily",
