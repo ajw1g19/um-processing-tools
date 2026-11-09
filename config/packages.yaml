@@ -138,7 +138,7 @@ packages:
     items:
       - { SECTION: "03", ITEM: "223", OUTPUT_FILE: "pm", DOMAIN: "DIAG" }
 
-  mflux-day:
+  mflux-daily:
     items:
       - { SECTION: "03", ITEM: "223", OUTPUT_FILE: "pd", DOMAIN: "DIAG" }
 
