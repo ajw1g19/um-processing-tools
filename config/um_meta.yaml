@@ -536,6 +536,22 @@ tas:
     standard_name: air_temperature
   convert: temp
 
+tas_min:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Minimum 1.5 m Air Temperature
+    units: K
+    standard_name: air_temperature
+  convert: temp
+
+tas_max:
+  dims: [time, latitude, longitude]
+  attrs:
+    long_name: Maximum 1.5 m Air Temperature
+    units: K
+    standard_name: air_temperature
+  convert: temp
+
 relhum:
   dims: [time, latitude, longitude]
   attrs:

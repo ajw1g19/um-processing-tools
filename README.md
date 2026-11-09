@@ -88,13 +88,13 @@ Use clean_restart_dumps.py to remove quarterly restart dumps (months 04, 07, 10)
 from Model_Output/{suite}/restart_dumps/
 Useful for reclaiming disk space when long model integrations have finished
 
-## Workflow: stash_extraction.py
+## Workflow: extract_stash.py
 
 Interactive extraction driver for one package or custom STASH list.
 
 Run:
 
-python STASH_Processing/stash_extraction.py
+python STASH_Processing/extract_stash.py
 
 Inputs:
 
@@ -150,7 +150,7 @@ Requested periods must stay within one interval; a request that spans intervals 
 
 ## Workflow: extract_climate.py
 
-Special-case extraction driver built on the same YAML/sbatch workflow as stash_extraction.py.
+Special-case extraction driver built on the same YAML/sbatch workflow as extract_stash.py.
 It submits a fixed package set for one suite/time window.
 
 Run:

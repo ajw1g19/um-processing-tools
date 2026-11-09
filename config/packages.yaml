@@ -134,6 +134,14 @@ packages:
     items:
       - { SECTION: "05", ITEM: "216", OUTPUT_FILE: "pb", DOMAIN: "DIAG" }
 
+  mflux:
+    items:
+      - { SECTION: "03", ITEM: "223", OUTPUT_FILE: "pm", DOMAIN: "DIAG" }
+
+  mflux-day:
+    items:
+      - { SECTION: "03", ITEM: "223", OUTPUT_FILE: "pd", DOMAIN: "DIAG" }
+
   evap:
     items:
       - { SECTION: "03", ITEM: "296", OUTPUT_FILE: "pt", DOMAIN: "DIAG" }

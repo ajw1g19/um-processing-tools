@@ -22,7 +22,7 @@ def _root_dir():
 
 
 def workspace_dir():
-    # Resolve workspace root; used by stash_extraction.py, um_extract_sbatch.py, stash_mon_mn.py, and extract_climate.py.
+    # Resolve workspace root; used by extract_stash.py, um_extract_sbatch.py, stash_mon_mn.py, and extract_climate.py.
     return os.path.dirname(_root_dir())
 
 
@@ -157,8 +157,18 @@ def resolve_stash_vn(entry, startyr, endyr=None):
     return start_interval[2]
 
 
+def suite_stash_vn(suite, startyr=None, endyr=None):
+    # Resolved STASH version for a suite and period; used by extract_stash.py to group suites.
+    suite_stash_vn = _load_yaml("um_stash_vn.yaml")
+
+    if suite not in suite_stash_vn:
+        sys.exit(f"Suite '{suite}' not found in config/um_stash_vn.yaml")
+
+    return resolve_stash_vn(suite_stash_vn[suite], startyr, endyr)
+
+
 def read_stash_table(suite, startyr=None, endyr=None):
-    # Load suite-specific STASH lookup table from config/stash.xlsx; used by stash_extraction.py and extract_climate.py.
+    # Load suite-specific STASH lookup table from config/stash.xlsx; used by extract_stash.py and extract_climate.py.
     suite_stash_vn = _load_yaml("um_stash_vn.yaml")
 
     if suite not in suite_stash_vn:
@@ -213,7 +223,7 @@ def um_stash_package(name, suite, startyr=None, endyr=None):
     return items
 
 def multi_levels(stash_extract, stash_req=None):
-    # Interactive level selector for multi-level requests; used by stash_extraction.py.
+    # Interactive level selector for multi-level requests; used by extract_stash.py.
 
     multi_levels = stash_extract[stash_extract["LEVELS"] > 1.0]
     if len(multi_levels) != 0:
@@ -366,7 +376,7 @@ def monthly_output_file(suite, start_yr, end_yr):
 
 def available_suites(pattern="*"):
     # List available suite directories from workspace Model_Output; used by
-    # stash_extraction.py, stash_mon_mn.py, extract_climate.py, and submit_pp_checks.py.
+    # extract_stash.py, stash_mon_mn.py, extract_climate.py, and submit_pp_checks.py.
     search = os.path.join(workspace_dir(), "Model_Output", pattern)
     return [
         os.path.basename(path)
@@ -376,7 +386,7 @@ def available_suites(pattern="*"):
 
 
 def suite_available_years(suite):
-    # Return inclusive/exclusive suite year bounds from cycle folders; used by stash_extraction.py, stash_mon_mn.py, and extract_climate.py.
+    # Return inclusive/exclusive suite year bounds from cycle folders; used by extract_stash.py, stash_mon_mn.py, and extract_climate.py.
     cycle_dirs = glob.glob(
         os.path.join(workspace_dir(), "Model_Output", suite, "*T0000Z")
     )
@@ -387,7 +397,7 @@ def suite_available_years(suite):
 
 
 def validate_whole_year_block(start_yr, end_yr, min_yr=None, max_yr=None):
-    # Validate start/end year input as an exclusive-end whole-year window; used by stash_extraction.py, stash_mon_mn.py, and extract_climate.py.
+    # Validate start/end year input as an exclusive-end whole-year window; used by extract_stash.py, stash_mon_mn.py, and extract_climate.py.
     try:
         start = int(start_yr)
         end = int(end_yr)
